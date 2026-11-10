@@ -1,0 +1,29 @@
+# GPU environment - Windows or Linux with an NVIDIA GPU only (not macOS).
+# Needs an NVIDIA driver that supports CUDA 12.4 or newer
+# (run `nvidia-smi` and check "CUDA Version" in the top-right corner).
+# Create with:  conda env create -f crisismmd-gpu.yml
+name: crisismmd-gpu
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu124
+      - torch==2.5.1+cu124
+      - torchvision==0.20.1+cu124
+      - numpy==1.26.4
+      - pandas==2.2.3
+      - scikit-learn==1.5.2
+      - matplotlib==3.9.2
+      - pillow==11.0.0
+      - requests==2.32.3
+      - pyyaml==6.0.2
+      - tqdm==4.67.1
+      - codecarbon==2.8.2
+      - psutil
+      - pynvml
+      - jupyter
+      - transformers==4.46.3
+      - timm==1.0.11
