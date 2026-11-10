@@ -69,8 +69,6 @@ python -c "import torch, torchvision, codecarbon; print(torch.__version__, torch
 
 Expected: `Python 3.12.x`, then `2.5.1+cpu False` for CPU (macOS shows `2.5.1 False`; Linux may show `2.5.1+cu124 False`) or `2.5.1+cu124 True` for GPU. If the GPU environment prints `False`, your NVIDIA driver is probably too old.
 
-Optional sanity check: `cd examples`, `python example_1.py`, `cd ..`. The first run downloads a pretrained object detector; it should print `Done!` and create `examples/street_bboxes.jpg` with boxes around cars and people.
-
 ### Updating the environment
 
 When someone adds a package, add it to **both** `crisismmd-cpu.yml` and `crisismmd-gpu.yml`. Everyone else then runs the line for their environment:
@@ -91,11 +89,9 @@ With your conda environment activated (it already includes everything the prepar
 python scripts/prepare_crisismmd.py --workers 12
 ```
 
-*Data-only alternative (no conda, no PyTorch):* create a Python 3.12 virtual environment and run `python -m pip install -r scripts/requirements-data.txt` before the command above.
-
 The script downloads the official agreed-label TSVs and their **12,708 unique images**, prepares the targets, and checks sample counts and image decoding. It pins the author repository and image mirror revisions. Re-run the same command to resume an interrupted download; it waits automatically if the mirror rate-limits requests. No GPU or PyTorch is needed for preparation.
 
-## Generated folders
+## Dataset folders
 
 ```text
 data/crisismmd/
@@ -120,12 +116,3 @@ To recheck local files without downloading:
 ```bash
 python scripts/prepare_crisismmd.py --verify-only
 ```
-
-Generated data and local JSON verification reports are excluded from Git. Optional Part C3 all-label data is not downloaded.
-
-## Reproducibility
-
-- Final learned models use **seeds 0, 1 and 2**; results report mean ± standard deviation.
-- Checkpoints are selected by **validation macro-F1** with early-stopping patience 3; test data is used only for final evaluation.
-- Package versions are pinned in the environment files; exact installed versions are in `requirements-lock.txt`.
-- Every run (debug, exploratory, final or failed) gets an experiment ID and a row in `results/logs/experiment_log.csv`, with runtime, energy (kWh) and emissions (kgCO₂e) measured by CodeCarbon, plus the hardware used.
