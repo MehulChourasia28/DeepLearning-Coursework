@@ -2,6 +2,18 @@
 
 Download and prepare **CrisisMMD v2.0** for the compulsory tweet–image classification tasks. This repository contains the preparation script and instructions; each teammate downloads the data locally.
 
+## Repository structure
+
+```text
+DeepLearning-Coursework/
+  data/                     Dataset and cached features (not in Git)
+  crisismmd-cpu.yml         Conda environment for CPU (any OS)
+  crisismmd-gpu.yml         Conda environment for NVIDIA GPU (Windows/Linux)
+  scripts/                
+    prepare_crisismmd.py    Data download & preparation
+  
+```
+
 ## Requirements
 
 - Windows 10/11, macOS or Linux
@@ -87,7 +99,7 @@ The script downloads the official agreed-label TSVs and their **12,708 unique im
 
 ```text
 data/crisismmd/
-  data_image/             Images grouped by disaster and collection date
+  data_image/            Images grouped by disaster and collection date
   splits/                Six unchanged official TSVs (dev = validation)
   prepared/
     informative/         Part A: train.tsv, valid.tsv, test.tsv
@@ -111,47 +123,9 @@ python scripts/prepare_crisismmd.py --verify-only
 
 Generated data and local JSON verification reports are excluded from Git. Optional Part C3 all-label data is not downloaded.
 
-## Repository structure
-
-```text
-DeepLearning-Coursework/
-  crisismmd-cpu.yml       Conda environment for CPU (any OS)
-  crisismmd-gpu.yml       Conda environment for NVIDIA GPU (Windows/Linux)
-  requirements-lock.txt   Exact installed package versions (pip freeze)
-  configs/                One YAML config per experiment
-  data/                   Dataset and cached features (not in Git)
-  src/crisismmd/          Reusable code: data, models, training, metrics, tracking
-  scripts/                Entry points (data preparation, Parts A, B and C)
-  notebooks/              Error analysis and Matplotlib figures
-  examples/               example_1.py + street.jpg (environment sanity check)
-  results/
-    logs/                 experiment_log.csv + CodeCarbon emissions
-    metrics/              CSV/JSON scores per model and seed
-    predictions/          Per-example predictions and probabilities
-    figures/              Learning curves, confusion matrices, energy plots
-    checkpoints/          Selected model weights (large files not in Git)
-  report/                 Environmental impact section and tables
-```
-
 ## Reproducibility
 
 - Final learned models use **seeds 0, 1 and 2**; results report mean ± standard deviation.
 - Checkpoints are selected by **validation macro-F1** with early-stopping patience 3; test data is used only for final evaluation.
 - Package versions are pinned in the environment files; exact installed versions are in `requirements-lock.txt`.
 - Every run (debug, exploratory, final or failed) gets an experiment ID and a row in `results/logs/experiment_log.csv`, with runtime, energy (kWh) and emissions (kgCO₂e) measured by CodeCarbon, plus the hardware used.
-
-### Hardware used
-
-| Member | Device | CPU | GPU | RAM | OS |
-| --- | --- | --- | --- | --- | --- |
-| *name* | *laptop/desktop* | *e.g. Intel i7-1260P* | *none / RTX 3060* | *16 GB* | *Windows 11* |
-
-## Team
-
-| Member | Contributions |
-| --- | --- |
-| *name* | *to be added* |
-
-## Sources
-
-[Official annotations and baseline](https://github.com/firojalam/multimodal_social_media) · [QCRI image mirror and CC BY-NC-SA 4.0 licence](https://huggingface.co/datasets/QCRI/CrisisMMD). Cite [Alam et al. (2018)](https://arxiv.org/abs/1805.00713) and [Ofli et al. (2020)](https://arxiv.org/abs/2004.11838).
