@@ -1,0 +1,7 @@
+SHC-A-002: task=informative model=text text=textcnn imbalance=none seed=0 run_type=debug device=cpu
+train rows 960, excluded (missing image) 0, vocab 1210
+trainable parameters: 386,350
+  epoch  1  train_loss 0.6759  val_loss 0.6056  val_macro_f1 0.4017  *
+  epoch  2  train_loss 0.5856  val_loss 0.5651  val_macro_f1 0.5945  *
+val macro-F1 0.5945  val acc 0.7127
+SHC-A-002 completed: runtime 3.19s, energy 2.19e-05 kWh, 5.21e-06 kgCO2e -> results/runs/SHC-A-002

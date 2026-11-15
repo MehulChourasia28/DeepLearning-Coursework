@@ -1,0 +1,13 @@
+SHC-A-023: task=informative model=text text=textcnn imbalance=none seed=2 run_type=final device=cpu
+train rows 9,601, excluded (missing image) 0, vocab 6732
+trainable parameters: 1,093,166
+  epoch  1  train_loss 0.5872  val_loss 0.5610  val_macro_f1 0.6975  *
+  epoch  2  train_loss 0.4602  val_loss 0.4541  val_macro_f1 0.7585  *
+  epoch  3  train_loss 0.3783  val_loss 0.4450  val_macro_f1 0.7754  *
+  epoch  4  train_loss 0.2836  val_loss 0.4487  val_macro_f1 0.7786  *
+  epoch  5  train_loss 0.2259  val_loss 0.4646  val_macro_f1 0.7872  *
+  epoch  6  train_loss 0.1763  val_loss 0.5421  val_macro_f1 0.7685
+  epoch  7  train_loss 0.1419  val_loss 0.5269  val_macro_f1 0.7712
+  epoch  8  train_loss 0.1129  val_loss 0.6455  val_macro_f1 0.7751
+val macro-F1 0.7872  val acc 0.8106  | test macro-F1 0.7931  test acc 0.8162
+SHC-A-023 early-stopped: runtime 33.22s, energy 3.94e-04 kWh, 9.36e-05 kgCO2e -> results/runs/SHC-A-023

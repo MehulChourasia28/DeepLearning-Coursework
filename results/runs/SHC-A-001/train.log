@@ -1,0 +1,5 @@
+SHC-A-001: task=informative model=majority text=None imbalance=none seed=0 run_type=debug device=cpu
+train rows 9,601, excluded (missing image) 0, vocab -
+majority class: informative
+val macro-F1 0.4017  val acc 0.6713
+SHC-A-001 completed: runtime 2.03s, energy 8.62e-09 kWh, 2.05e-09 kgCO2e -> results/runs/SHC-A-001

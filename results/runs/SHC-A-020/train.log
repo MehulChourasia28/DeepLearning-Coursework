@@ -1,0 +1,10 @@
+SHC-A-020: task=informative model=image text=None imbalance=none seed=1 run_type=final device=cpu
+train rows 9,601, excluded (missing image) 0, vocab -
+trainable parameters: 131,842
+  epoch  1  train_loss 0.5011  val_loss 0.4382  val_macro_f1 0.7569  *
+  epoch  2  train_loss 0.4579  val_loss 0.4289  val_macro_f1 0.7792  *
+  epoch  3  train_loss 0.4496  val_loss 0.4102  val_macro_f1 0.7766
+  epoch  4  train_loss 0.4383  val_loss 0.4095  val_macro_f1 0.7747
+  epoch  5  train_loss 0.4334  val_loss 0.4080  val_macro_f1 0.7741
+val macro-F1 0.7792  val acc 0.8118  | test macro-F1 0.7958  test acc 0.8259
+SHC-A-020 early-stopped: runtime 3.52s, energy 2.43e-05 kWh, 5.77e-06 kgCO2e -> results/runs/SHC-A-020

@@ -1,0 +1,6 @@
+experiment_id,config,seed,best_epoch,epochs_completed,val_macro_f1,test_macro_f1,test_accuracy,trainable_params,train_time_s,energy_kwh,selected
+SHC-A-007,text_textcnn,0,4,7,0.7832364246748587,,,1093166,35.3,0.0003145742598056705,True
+SHC-A-008,text_bilstm,0,4,7,0.7799545011978872,,,1275266,47.73,0.0005118219488606694,True
+SHC-A-009,image,0,3,6,0.7859755907007157,,,131842,3.66,4.0251234450048003e-05,True
+SHC-A-010,fusion_textcnn,0,2,5,0.8494838304910739,,,1224238,19.74,0.0002654087656977339,True
+SHC-A-011,fusion_bilstm,0,2,5,0.8583336450838331,,,1406338,32.07,0.0003994938420014511,True

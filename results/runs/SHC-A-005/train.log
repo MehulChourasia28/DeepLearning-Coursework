@@ -1,0 +1,7 @@
+SHC-A-005: task=informative model=fusion text=textcnn imbalance=none seed=0 run_type=debug device=cpu
+train rows 960, excluded (missing image) 0, vocab 1210
+trainable parameters: 517,422
+  epoch  1  train_loss 0.6839  val_loss 0.5280  val_macro_f1 0.5832  *
+  epoch  2  train_loss 0.4831  val_loss 0.4470  val_macro_f1 0.7611  *
+val macro-F1 0.7611  val acc 0.8112
+SHC-A-005 completed: runtime 3.02s, energy 1.95e-05 kWh, 4.64e-06 kgCO2e -> results/runs/SHC-A-005

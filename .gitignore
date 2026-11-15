@@ -4,3 +4,16 @@ venv/
 __pycache__/
 *.part
 data/
+
+# Local-only files (never commit)
+CLAUDE.md
+.claude/
+*.docx
+
+# codecarbon output (contains latitude/longitude)
+emissions*.csv
+.codecarbon.config
+powermetrics_log.txt
+
+# Model checkpoints (large; selected ones are copied to checkpoints/ for submission)
+results/**/*.pt

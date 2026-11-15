@@ -1,0 +1,7 @@
+SHC-A-006: task=informative model=fusion text=bilstm imbalance=none seed=0 run_type=debug device=cpu
+train rows 960, excluded (missing image) 0, vocab 1210
+trainable parameters: 699,522
+  epoch  1  train_loss 0.6281  val_loss 0.5107  val_macro_f1 0.5975  *
+  epoch  2  train_loss 0.4920  val_loss 0.4499  val_macro_f1 0.7408  *
+val macro-F1 0.7408  val acc 0.7997
+SHC-A-006 completed: runtime 3.19s, energy 2.21e-05 kWh, 5.25e-06 kgCO2e -> results/runs/SHC-A-006

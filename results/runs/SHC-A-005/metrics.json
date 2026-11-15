@@ -1,0 +1,39 @@
+{
+  "valid": {
+    "accuracy": 0.8111888111888111,
+    "macro_f1": 0.7611462379258143,
+    "weighted_f1": 0.7986086642990856,
+    "per_class": {
+      "not_informative": {
+        "precision": 0.8273809523809523,
+        "recall": 0.5377176015473888,
+        "f1": 0.6518171160609613,
+        "support": 517,
+        "correct": 278
+      },
+      "informative": {
+        "precision": 0.8067906224737268,
+        "recall": 0.9450757575757576,
+        "f1": 0.8704753597906673,
+        "support": 1056,
+        "correct": 998
+      }
+    },
+    "confusion_matrix": [
+      [
+        278,
+        239
+      ],
+      [
+        58,
+        998
+      ]
+    ],
+    "labels": [
+      "not_informative",
+      "informative"
+    ],
+    "informative_precision": 0.8067906224737268,
+    "informative_recall": 0.9450757575757576
+  }
+}

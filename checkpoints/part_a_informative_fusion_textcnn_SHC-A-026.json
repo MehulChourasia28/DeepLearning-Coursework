@@ -1,0 +1,19 @@
+{
+  "checkpoint": "part_a_informative_fusion_textcnn_SHC-A-026.pt",
+  "experiment_id": "SHC-A-026",
+  "task": "informative (Part A)",
+  "model": "fusion: ResNet18 image features (frozen, cached) + TextCNN, concatenation -> MLP",
+  "seed": 2,
+  "selected_epoch": 4,
+  "selection_rule": "median validation macro-F1 of seeds 0/1/2 among fusion TextCNN runs",
+  "why_this_config": "Fusion was the best model family on validation. Fusion TextCNN and fusion BiLSTM tie on mean validation macro-F1 (0.8453 vs 0.8455, difference far below the seed std of 0.004-0.012); the tie is broken by training cost (TextCNN ~22 s / 2.7e-4 kWh vs BiLSTM ~33 s / 4.1e-4 kWh per run). Test scores were not used for this choice.",
+  "valid": {
+    "macro_f1": 0.8453635587574582,
+    "accuracy": 0.863318499682136
+  },
+  "test": {
+    "macro_f1": 0.8550578199088688,
+    "accuracy": 0.8722294654498044
+  },
+  "sha256": "eb01efc4115f51a874c20253ff363b7ab49a17fa3debcdef72f9cbdfa136ecb2"
+}

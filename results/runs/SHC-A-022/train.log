@@ -1,0 +1,11 @@
+SHC-A-022: task=informative model=fusion text=bilstm imbalance=none seed=1 run_type=final device=cpu
+train rows 9,601, excluded (missing image) 0, vocab 6732
+trainable parameters: 1,406,338
+  epoch  1  train_loss 0.4395  val_loss 0.3429  val_macro_f1 0.8069  *
+  epoch  2  train_loss 0.3129  val_loss 0.3228  val_macro_f1 0.8334  *
+  epoch  3  train_loss 0.2375  val_loss 0.3270  val_macro_f1 0.8440  *
+  epoch  4  train_loss 0.1791  val_loss 0.3777  val_macro_f1 0.8409
+  epoch  5  train_loss 0.1253  val_loss 0.4161  val_macro_f1 0.8175
+  epoch  6  train_loss 0.0895  val_loss 0.5109  val_macro_f1 0.8215
+val macro-F1 0.8440  val acc 0.8646  | test macro-F1 0.8552  test acc 0.8735
+SHC-A-022 early-stopped: runtime 36.59s, energy 4.35e-04 kWh, 1.03e-04 kgCO2e -> results/runs/SHC-A-022

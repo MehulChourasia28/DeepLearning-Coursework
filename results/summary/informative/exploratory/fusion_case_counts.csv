@@ -1,0 +1,6 @@
+case,count
+all agree or all wrong,1158
+helps: one unimodal wrong,283
+fails: one unimodal right,111
+fails: both unimodal right,11
+helps: both unimodal wrong,10

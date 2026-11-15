@@ -1,0 +1,32 @@
+{
+  "text_textcnn": {
+    "experiment_id": "SHC-A-007",
+    "seed": 0,
+    "val_macro_f1": 0.7832364246748587,
+    "rule": "median validation macro-F1 over seeds"
+  },
+  "text_bilstm": {
+    "experiment_id": "SHC-A-008",
+    "seed": 0,
+    "val_macro_f1": 0.7799545011978872,
+    "rule": "median validation macro-F1 over seeds"
+  },
+  "image": {
+    "experiment_id": "SHC-A-009",
+    "seed": 0,
+    "val_macro_f1": 0.7859755907007157,
+    "rule": "median validation macro-F1 over seeds"
+  },
+  "fusion_textcnn": {
+    "experiment_id": "SHC-A-010",
+    "seed": 0,
+    "val_macro_f1": 0.8494838304910739,
+    "rule": "median validation macro-F1 over seeds"
+  },
+  "fusion_bilstm": {
+    "experiment_id": "SHC-A-011",
+    "seed": 0,
+    "val_macro_f1": 0.8583336450838331,
+    "rule": "median validation macro-F1 over seeds"
+  }
+}
