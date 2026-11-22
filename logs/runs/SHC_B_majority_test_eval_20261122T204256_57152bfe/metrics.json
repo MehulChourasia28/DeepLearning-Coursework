@@ -1,0 +1,89 @@
+{
+  "test": {
+    "accuracy": 0.5277486910994764,
+    "macro_f1": 0.13817683344756682,
+    "weighted_f1": 0.3646132149611187,
+    "per_class": {
+      "affected_individuals": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 9,
+        "correct": 0
+      },
+      "infrastructure_and_utility_damage": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 81,
+        "correct": 0
+      },
+      "rescue_volunteering_or_donation_effort": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 126,
+        "correct": 0
+      },
+      "other_relevant_information": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 235,
+        "correct": 0
+      },
+      "not_humanitarian": {
+        "precision": 0.5277486910994764,
+        "recall": 1.0,
+        "f1": 0.6908841672378341,
+        "support": 504,
+        "correct": 504
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        0,
+        0,
+        9
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        81
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        126
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        235
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        504
+      ]
+    ],
+    "labels": [
+      "affected_individuals",
+      "infrastructure_and_utility_damage",
+      "rescue_volunteering_or_donation_effort",
+      "other_relevant_information",
+      "not_humanitarian"
+    ]
+  },
+  "excluded_rows": 0
+}

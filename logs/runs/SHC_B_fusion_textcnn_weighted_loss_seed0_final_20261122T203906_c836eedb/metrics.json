@@ -1,0 +1,88 @@
+{
+  "valid": {
+    "accuracy": 0.8106212424849699,
+    "macro_f1": 0.6920714757133202,
+    "weighted_f1": 0.8106079837520526,
+    "per_class": {
+      "affected_individuals": {
+        "precision": 0.4,
+        "recall": 0.2222222222222222,
+        "f1": 0.2857142857142857,
+        "support": 9,
+        "correct": 2
+      },
+      "infrastructure_and_utility_damage": {
+        "precision": 0.8169014084507042,
+        "recall": 0.725,
+        "f1": 0.7682119205298014,
+        "support": 80,
+        "correct": 58
+      },
+      "rescue_volunteering_or_donation_effort": {
+        "precision": 0.7058823529411765,
+        "recall": 0.8053691275167785,
+        "f1": 0.7523510971786834,
+        "support": 149,
+        "correct": 120
+      },
+      "other_relevant_information": {
+        "precision": 0.7638376383763837,
+        "recall": 0.8661087866108786,
+        "f1": 0.8117647058823529,
+        "support": 239,
+        "correct": 207
+      },
+      "not_humanitarian": {
+        "precision": 0.8773388773388774,
+        "recall": 0.8099808061420346,
+        "f1": 0.8423153692614771,
+        "support": 521,
+        "correct": 422
+      }
+    },
+    "confusion_matrix": [
+      [
+        2,
+        0,
+        4,
+        0,
+        3
+      ],
+      [
+        2,
+        58,
+        5,
+        3,
+        12
+      ],
+      [
+        0,
+        5,
+        120,
+        3,
+        21
+      ],
+      [
+        0,
+        1,
+        8,
+        207,
+        23
+      ],
+      [
+        1,
+        7,
+        33,
+        58,
+        422
+      ]
+    ],
+    "labels": [
+      "affected_individuals",
+      "infrastructure_and_utility_damage",
+      "rescue_volunteering_or_donation_effort",
+      "other_relevant_information",
+      "not_humanitarian"
+    ]
+  }
+}

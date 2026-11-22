@@ -1,0 +1,32 @@
+{
+  "text_textcnn": {
+    "experiment_id": "SHC_B_text_textcnn_seed0_exploratory_20261122T203231_75c85af1",
+    "seed": 0,
+    "val_macro_f1": 0.5300691185183792,
+    "rule": "median validation macro-F1 over seeds"
+  },
+  "image": {
+    "experiment_id": "SHC_B_image_seed0_exploratory_20261122T203253_95c1124e",
+    "seed": 0,
+    "val_macro_f1": 0.5912517889673692,
+    "rule": "median validation macro-F1 over seeds"
+  },
+  "fusion_textcnn": {
+    "experiment_id": "SHC_B_fusion_textcnn_seed0_exploratory_20261122T203259_c81eaf04",
+    "seed": 0,
+    "val_macro_f1": 0.7032544519404137,
+    "rule": "median validation macro-F1 over seeds"
+  },
+  "fusion_textcnn_weighted_loss": {
+    "experiment_id": "SHC_B_fusion_textcnn_weighted_loss_seed0_exploratory_20261122T203332_1e9c6afa",
+    "seed": 0,
+    "val_macro_f1": 0.6920714757133202,
+    "rule": "median validation macro-F1 over seeds"
+  },
+  "fusion_textcnn_weighted_sampler": {
+    "experiment_id": "SHC_B_fusion_textcnn_weighted_sampler_seed0_exploratory_20261122T203407_acd89535",
+    "seed": 0,
+    "val_macro_f1": 0.6778515954983163,
+    "rule": "median validation macro-F1 over seeds"
+  }
+}

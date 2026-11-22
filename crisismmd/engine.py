@@ -33,10 +33,12 @@ def _mean_loss(model, loader, criterion, device):
 
 
 def fit(model, train_loader, val_loader, criterion, optimizer, device, max_epochs=20, patience=3,
-        log=print):
+        log=print, on_batch=None, on_epoch=None):
     """Train; keep the weights of the epoch with the best validation macro-F1.
 
     Stops after `patience` consecutive epochs without a strict improvement.
+    on_batch(epoch, batch_index, loss, examples) and on_epoch(epoch, row) are optional reporting
+    callbacks (e.g. the run logger); they never change the computation.
     Returns (best_state_dict, history list, best_epoch, stop_reason).
     """
     val_labels = val_loader.dataset.tensors[3].numpy()
@@ -46,13 +48,16 @@ def fit(model, train_loader, val_loader, criterion, optimizer, device, max_epoch
         started = time.perf_counter()
         model.train()
         total, count = 0.0, 0
-        for tokens, lengths, image, labels in _batches(train_loader, device):
+        for batch_index, (tokens, lengths, image, labels) in enumerate(_batches(train_loader, device), 1):
             optimizer.zero_grad()
             loss = criterion(model(tokens, lengths, image), labels)
             loss.backward()
             optimizer.step()
-            total += loss.item() * len(labels)
+            value = loss.item()
+            total += value * len(labels)
             count += len(labels)
+            if on_batch is not None:
+                on_batch(epoch, batch_index, value, len(labels))
         probs = predict(model, val_loader, device)
         num_classes = probs.shape[1]
         val_pred = probs.argmax(1)
@@ -63,6 +68,8 @@ def fit(model, train_loader, val_loader, criterion, optimizer, device, max_epoch
                "val_macro_f1": val_f1, "val_accuracy": float((val_pred == val_labels).mean()),
                "epoch_seconds": time.perf_counter() - started}
         history.append(row)
+        if on_epoch is not None:
+            on_epoch(epoch, row)
         improved = val_f1 > best_f1
         if improved:
             best_f1, best_epoch, best_state, stale = val_f1, epoch, copy.deepcopy(model.state_dict()), 0

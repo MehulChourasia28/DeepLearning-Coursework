@@ -1,0 +1,18 @@
+SHC_B_fusion_textcnn_weighted_loss_seed0_final_20261122T203906_c836eedb: task=humanitarian model=fusion_textcnn_weighted_loss seed=0 run_type=final device=cpu
+train rows 6,126, excluded (missing image) 0, vocab 5389
+trainable parameters: 1,053,105
+class weights: affected_individuals 17.2563, infrastructure_and_utility_damage 2.002, rescue_volunteering_or_donation_effort 1.3434, other_relevant_information 0.9579, not_humanitarian 0.3768
+  epoch  1  train_loss 1.2680  val_loss 0.8750  val_macro_f1 0.5580  *
+  epoch  2  train_loss 0.8626  val_loss 0.7672  val_macro_f1 0.6307  *
+  epoch  3  train_loss 0.6712  val_loss 0.7084  val_macro_f1 0.6013
+  epoch  4  train_loss 0.5350  val_loss 0.7223  val_macro_f1 0.6463  *
+  epoch  5  train_loss 0.4469  val_loss 0.6623  val_macro_f1 0.6353
+  epoch  6  train_loss 0.3612  val_loss 0.8074  val_macro_f1 0.6623  *
+  epoch  7  train_loss 0.3072  val_loss 0.9905  val_macro_f1 0.6405
+  epoch  8  train_loss 0.2603  val_loss 0.9238  val_macro_f1 0.6582
+  epoch  9  train_loss 0.2219  val_loss 1.1993  val_macro_f1 0.6921  *
+  epoch 10  train_loss 0.2073  val_loss 0.8717  val_macro_f1 0.6770
+  epoch 11  train_loss 0.1630  val_loss 1.0029  val_macro_f1 0.6913
+  epoch 12  train_loss 0.1910  val_loss 0.9645  val_macro_f1 0.6332
+selected epoch 9 (early_stopped)
+val macro-F1 0.6921  val acc 0.8106

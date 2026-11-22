@@ -1,0 +1,2 @@
+tensorboard==2.21.0
+codecarbon==3.3.2

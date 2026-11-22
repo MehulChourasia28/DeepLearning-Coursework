@@ -1,0 +1,32 @@
+{
+  "majority": {
+    "experiment_id": "SHC_B_majority_final_20261122T203759_e7e533c8",
+    "seed": null,
+    "val_macro_f1": 0.1371955233706386,
+    "rule": "median validation macro-F1 over seeds"
+  },
+  "text_textcnn": {
+    "experiment_id": "SHC_B_text_textcnn_seed2_final_20261122T204110_0fa632ff",
+    "seed": 2,
+    "val_macro_f1": 0.5560508457745977,
+    "rule": "median validation macro-F1 over seeds"
+  },
+  "image": {
+    "experiment_id": "SHC_B_image_seed0_final_20261122T203826_aec923dd",
+    "seed": 0,
+    "val_macro_f1": 0.5912517889673692,
+    "rule": "median validation macro-F1 over seeds"
+  },
+  "fusion_textcnn": {
+    "experiment_id": "SHC_B_fusion_textcnn_seed2_final_20261122T204144_ef0c1338",
+    "seed": 2,
+    "val_macro_f1": 0.6557653259815206,
+    "rule": "median validation macro-F1 over seeds"
+  },
+  "fusion_textcnn_weighted_loss": {
+    "experiment_id": "SHC_B_fusion_textcnn_weighted_loss_seed1_final_20261122T204038_00c6a3e5",
+    "seed": 1,
+    "val_macro_f1": 0.696187486552296,
+    "rule": "median validation macro-F1 over seeds"
+  }
+}

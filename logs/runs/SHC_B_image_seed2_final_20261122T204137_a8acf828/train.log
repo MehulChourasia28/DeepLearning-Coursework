@@ -1,0 +1,14 @@
+SHC_B_image_seed2_final_20261122T204137_a8acf828: task=humanitarian model=image seed=2 run_type=final device=cpu
+train rows 6,126, excluded (missing image) 0, vocab -
+trainable parameters: 132,613
+  epoch  1  train_loss 0.9139  val_loss 0.7325  val_macro_f1 0.5600  *
+  epoch  2  train_loss 0.7456  val_loss 0.6795  val_macro_f1 0.5675  *
+  epoch  3  train_loss 0.7289  val_loss 0.6673  val_macro_f1 0.5665
+  epoch  4  train_loss 0.7041  val_loss 0.6829  val_macro_f1 0.5830  *
+  epoch  5  train_loss 0.6928  val_loss 0.6727  val_macro_f1 0.5806
+  epoch  6  train_loss 0.6876  val_loss 0.6531  val_macro_f1 0.5875  *
+  epoch  7  train_loss 0.6872  val_loss 0.6687  val_macro_f1 0.5858
+  epoch  8  train_loss 0.6701  val_loss 0.6519  val_macro_f1 0.5865
+  epoch  9  train_loss 0.6692  val_loss 0.6534  val_macro_f1 0.5863
+selected epoch 6 (early_stopped)
+val macro-F1 0.5875  val acc 0.7595

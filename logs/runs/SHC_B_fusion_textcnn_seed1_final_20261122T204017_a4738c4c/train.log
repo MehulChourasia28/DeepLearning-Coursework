@@ -1,0 +1,12 @@
+SHC_B_fusion_textcnn_seed1_final_20261122T204017_a4738c4c: task=humanitarian model=fusion_textcnn seed=1 run_type=final device=cpu
+train rows 6,126, excluded (missing image) 0, vocab 5389
+trainable parameters: 1,053,105
+  epoch  1  train_loss 0.8771  val_loss 0.6245  val_macro_f1 0.5956  *
+  epoch  2  train_loss 0.6159  val_loss 0.5546  val_macro_f1 0.6173  *
+  epoch  3  train_loss 0.4877  val_loss 0.5074  val_macro_f1 0.6247  *
+  epoch  4  train_loss 0.3999  val_loss 0.5021  val_macro_f1 0.6413  *
+  epoch  5  train_loss 0.3239  val_loss 0.5264  val_macro_f1 0.6323
+  epoch  6  train_loss 0.2649  val_loss 0.5324  val_macro_f1 0.6353
+  epoch  7  train_loss 0.2098  val_loss 0.5850  val_macro_f1 0.6242
+selected epoch 4 (early_stopped)
+val macro-F1 0.6413  val acc 0.8176

@@ -1,0 +1,21 @@
+{
+  "checkpoint": "part_b_humanitarian_fusion_textcnn_weighted_loss_seed1.pt",
+  "experiment_id": "SHC_B_fusion_textcnn_weighted_loss_seed1_final_20261122T204038_00c6a3e5",
+  "evaluation_record": "SHC_B_fusion_textcnn_weighted_loss_seed1_test_eval_20261122T204255_e1937694",
+  "task": "humanitarian, five classes (Part B)",
+  "model": "fusion: cached frozen ResNet18 features + TextCNN, concatenation -> MLP; class-weighted cross-entropy",
+  "seed": 1,
+  "selected_epoch": 9,
+  "selection_rule": "best configuration by mean validation macro-F1 (weighted loss 0.704 vs plain cross-entropy 0.667), then the seed with the median validation macro-F1",
+  "selection_record": "results/selection/partB_humanitarian_median_validation_selection.json (selected_at 2026-11-22T20:42:53.635600+00:00, before any test evaluation)",
+  "valid": {
+    "macro_f1": 0.696187486552296,
+    "accuracy": 0.8246492985971944
+  },
+  "test": {
+    "macro_f1": 0.6823331394437211,
+    "accuracy": 0.806282722513089,
+    "affected_individuals_correct": "2/9"
+  },
+  "sha256": "8ed3115bbb356775e4d42d8345c6abb7681857728c8e2a85c39117de2a76f614"
+}

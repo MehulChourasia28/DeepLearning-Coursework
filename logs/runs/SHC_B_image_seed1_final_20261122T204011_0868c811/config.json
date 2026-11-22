@@ -1,0 +1,96 @@
+{
+  "experiment_id": "SHC_B_image_seed1_final_20261122T204011_0868c811",
+  "coursework_part": "B",
+  "task": "five_class_humanitarian",
+  "activity": "training",
+  "workflow_stage": "final_training",
+  "run_type": "final",
+  "model": "image",
+  "seed": 1,
+  "training_examples": null,
+  "dataset_fraction": 1.0,
+  "batch_size": 64,
+  "max_epochs": 20,
+  "early_stopping_patience": 3,
+  "optimizer": "Adam",
+  "initial_lr": 0.001,
+  "scheduler": null,
+  "hyperparameters": {
+    "model_key": "image",
+    "text_encoder": null,
+    "imbalance": "none",
+    "max_tokens": 64,
+    "min_freq": 2,
+    "emb_dim": 128,
+    "head_hidden": 256,
+    "dropout": 0.5,
+    "weight_decay": 0.0,
+    "loss": "cross_entropy",
+    "selection": "best validation macro-F1",
+    "member": "SHC",
+    "code": "crisismmd package + scripts/train.py"
+  },
+  "country_iso_code": "GBR",
+  "tracking_mode": "machine",
+  "measurement_method_file": "templates/measurement_method.json",
+  "missing_measurements": "",
+  "measure_power_secs": 5,
+  "measurement_boundary": "Loading the prepared TSVs and cached image features, tokenisation and training-only vocabulary, model construction, training, per-epoch validation, best-epoch validation predictions and checkpoint saving; excludes feature extraction (own record), dataset download and test evaluation (separate evaluation record). CodeCarbon machine mode measures the whole computer, so the idle desktop, display output and any other open programs are included; see the idle-baseline run for this fixed background draw.",
+  "cache_used": true,
+  "cache_path": "data/crisismmd/features/resnet18_imagenet1k_v1.npz",
+  "checkpoint_used": false,
+  "checkpoint_input_path": null,
+  "evaluated_experiment_id": null,
+  "reuse_notes": "Frozen ResNet18 features reused from the cached .npz; no image decoding or ResNet18 inference.",
+  "rerun_of": null,
+  "rerun_reason": null,
+  "engineering_estimate_inputs": null,
+  "notes": "Part B final",
+  "measurement_method_id": "M1_codecarbon332_rapl_nvml_neso_2025-11_2026-10",
+  "carbon_intensity_gco2e_per_kwh": 122,
+  "carbon_intensity_source": "NESO Carbon Intensity API (api.carbonintensity.org.uk/intensity/stats), Great Britain national half-hourly actual intensity; mean of monthly averages Nov 2025 to Oct 2026 weighted by days = 121.7, rounded to 122 gCO2/kWh. National 12-month average, NOT time-specific or regional. NESO reports direct generation CO2, not life-cycle CO2e, and excludes transmission/distribution losses; this is covered by the upper bound.",
+  "carbon_intensity_type": "national_12_month_average",
+  "carbon_intensity_range_gco2e_per_kwh": [
+    94,
+    237.589
+  ],
+  "carbon_intensity_range_source": "Low: lowest NESO monthly national average in the same 12 months (Apr 2026, 94 g/kWh). High: CodeCarbon 3.3.2 bundled UK (GBR) annual intensity for 2023 (237.589 g/kWh, global_energy_mix.json), a higher mix-based estimate that brackets the CO2 vs CO2e and older-grid-mix methodology differences.",
+  "pue": 1.0,
+  "pue_source": "Personal desktop, no data-centre cooling or facility overhead; PUE fixed at 1.0.",
+  "component_energy_factors": {
+    "gpu_measured": [
+      0.95,
+      1.05
+    ],
+    "cpu_measured": [
+      0.9,
+      1.1
+    ],
+    "cpu_estimated": [
+      0.5,
+      2.0
+    ],
+    "gpu_estimated": [
+      0.5,
+      2.0
+    ],
+    "ram_estimated": [
+      0.25,
+      1.0
+    ],
+    "unknown": [
+      0.5,
+      2.0
+    ],
+    "none": [
+      1.0,
+      1.0
+    ]
+  },
+  "unmeasured_overhead_factor": [
+    1.0,
+    1.25
+  ],
+  "uncertainty_basis": "Each component's energy is multiplied by a low/high factor chosen by how it was obtained. GPU (NVIDIA NVML board energy counter) +/-5%. CPU from the RAPL package energy counter +/-10% (AMD RAPL is the processor's own model, not a wall-socket meter). CPU estimated from load x TDP if RAPL is unreadable 0.5x to 2x. RAM is always a CodeCarbon heuristic (5 W per guessed DIMM; 4 DIMMs = 20 W for 30.5 GB) and two DDR5 modules can draw about 5 W, so 0.25x to 1x. The total is then multiplied by 1.0 to 1.25 for unmetered motherboard, storage, fans and PSU conversion loss. Emissions bounds combine the energy bounds with the carbon-intensity range. These are stated engineering assumptions, not statistical confidence intervals.",
+  "measurement_exclusions": "Monitor, network equipment, room lighting, embodied/manufacturing carbon, dataset download and centrally prepared resources. Wall-socket losses are not metered; they are covered only by the uncertainty upper bound."
+}

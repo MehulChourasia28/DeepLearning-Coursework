@@ -17,3 +17,8 @@ powermetrics_log.txt
 
 # Model checkpoints (large; selected ones are copied to checkpoints/ for submission)
 results/**/*.pt
+
+# Run-logger folders: checkpoints are large (selected ones go to checkpoints/);
+# codecarbon.log records absolute paths (local home directory)
+logs/runs/*/best.pt
+logs/runs/*/codecarbon.log

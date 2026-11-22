@@ -1,0 +1,8 @@
+SHC_B_fusion_textcnn_weighted_loss_seed0_debug_20261122T202341_e56d3c4e: task=humanitarian model=fusion_textcnn_weighted_loss seed=0 run_type=debug device=cpu
+train rows 613, excluded (missing image) 0, vocab 858
+trainable parameters: 473,137
+class weights: affected_individuals 13.6222, infrastructure_and_utility_damage 2.1138, rescue_volunteering_or_donation_effort 1.3622, other_relevant_information 0.8949, not_humanitarian 0.3843
+  epoch  1  train_loss 1.5982  val_loss 1.4335  val_macro_f1 0.3740  *
+  epoch  2  train_loss 1.2573  val_loss 1.1744  val_macro_f1 0.4237  *
+selected epoch 2 (max_epochs)
+val macro-F1 0.4237  val acc 0.5371

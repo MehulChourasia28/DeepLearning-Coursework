@@ -37,7 +37,11 @@ python scripts/extract_image_features.py
 # 3. Experiment-ID prefix (each group member uses their own)
 export CRISISMMD_MEMBER=SHC
 
-# 4. Final runs: majority baseline once (deterministic), five learned models × seeds 0, 1, 2 (≈7 min on CPU)
+# 4. Idle baseline: 60 s of the idle machine (fixed background power, for the energy analysis)
+python scripts/idle_baseline.py
+
+# 5. Final training: majority baseline once (deterministic), five learned models × seeds 0, 1, 2 (≈7 min on CPU).
+#    Training never touches the test split.
 python scripts/train.py --task informative --model majority --run-type final --purpose "Part A final"
 for seed in 0 1 2; do
   for m in "text --text-encoder textcnn" "text --text-encoder bilstm" "image" "fusion --text-encoder textcnn" "fusion --text-encoder bilstm"; do
@@ -45,15 +49,26 @@ for seed in 0 1 2; do
   done
 done
 
-# 5. Tables and figures (mean ± std, median-run selection, learning curves, confusion matrices, examples)
-python scripts/summarise.py --task informative --run-type final
+# 6. Record the median-validation selection (timestamped), THEN evaluate every final checkpoint on test
+python scripts/evaluate_final.py --task informative
 
-# 6. Re-evaluate the submitted checkpoint without retraining
+# 7. Run log + Table 1/Table 2, then results tables/figures and energy figures
+python -m scripts.aggregate_runs
+python scripts/summarise.py --task informative --run-type final
+python scripts/energy_figures.py --part A
+
+# 8. Re-evaluate the submitted checkpoint without retraining
 python scripts/evaluate_checkpoint.py checkpoints/part_a_informative_fusion_textcnn_SHC-A-026.pt --split test
 ```
 
-GPU: add `--device cuda` to steps 2 and 4 (picked automatically when available). Quick pipeline check:
+GPU: add `--device cuda` to steps 2 and 5 (picked automatically when available). Quick pipeline check:
 `--run-type debug --fraction 0.1 --max-epochs 2`.
+
+**History note.** The reported Part A runs (`SHC-A-001`…`027`) were made with the first version of `train.py`, which
+evaluated the test split inside each final run and logged to `results/runs/`. The pipeline was then moved to the
+group run logger (`scripts/run_logger.py`) with test evaluation as a separate step (steps 5–6 above). The old
+records were converted into the group format without retraining (`scripts/convert_legacy_runs.py`), and a
+re-run of `SHC-A-010` with the new pipeline reproduced it exactly at every epoch.
 
 ## 3. Configuration
 
@@ -123,22 +138,28 @@ VGG16, so the numbers are context rather than a like-for-like comparison
 ## 6. Outputs
 
 ```
+logs/
+  run_log.csv                       the experiment log: one row per run (all types, incl. failed/interrupted)
+  stage_summary.csv                 energy/emissions by workflow stage (report Table 1)
+  model_summary.csv                 final models: F1 mean/std and energy per seed (report Table 2)
+  runs/<id>/summary.json            one run's full record (config, hardware, energy per component, ranges, scores)
+  runs/<id>/epochs.csv, tensorboard/, energy*.csv   per-epoch log, TensorBoard events, CodeCarbon samples
+  runs/<id>/history.csv, metrics.json, predictions_valid.csv, train.log   our training outputs
+  runs/<id>_test_eval…/predictions_test.csv, metrics.json                  linked test evaluation
 results/
-  run_log.csv                       one row per run (all run types, incl. failed/interrupted), energy and hardware
-  runs/<ID>/run.json                full record for one run (config, hardware, timings, energy, scores)
-  runs/<ID>/train.log               console output
-  runs/<ID>/history.csv             per-epoch train/val loss, val macro-F1, accuracy (learning curves)
-  runs/<ID>/metrics.json            validation (and test for final runs) metrics, confusion matrices
-  runs/<ID>/predictions_<split>.csv per-example labels, predictions and class probabilities
-  runs/<ID>/model.pt                weights + vocabulary + config (not in Git)
+  runs/SHC-A-0xx/                   original Part A outputs (predictions, metrics, history); referenced by the
+                                    converted records in logs/runs/
   summary/informative/final/        summary.md/.csv, runs.csv, selected_runs.json, literature_comparison.md,
                                     model_comparison.png, learning_curves_*.png, confusion_*.png,
                                     fusion_examples.png/.csv, fusion_case_counts.csv
+  environment/partA/                energy_by_stage.png, energy_vs_performance.png, energy_by_component.png,
+                                    environmental_indicators.csv
 checkpoints/part_a_informative_fusion_textcnn_SHC-A-026.pt (+ .json with selection rule and SHA-256)
 ```
 
-Experiment IDs are `<member>-<part>-<number>` (e.g. `SHC-A-016`). Each run is registered before it starts, so
-failed and interrupted runs remain in the log. Read predictions with `tweet_id`/`image_id` as strings.
+Part A experiment IDs are `SHC-A-<number>` (original scheme); later runs use the logger's
+`<member>_<part>_<model>_seed<N>_<run type>_<timestamp>_<random>`. Each run is registered before it starts, so failed
+and interrupted runs remain in the log. Read predictions with `tweet_id`/`image_id` as strings.
 
 ## 7. Selected checkpoint
 
@@ -150,16 +171,24 @@ class order and configuration; step 6 above rebuilds and evaluates it.
 
 ## 8. Energy and emissions
 
-Every training run is tracked with codecarbon (offline mode, UK grid average, 237.6 gCO₂e/kWh), separately for
-training and evaluation. CPU energy was measured through Intel RAPL for the training runs; RAM energy is
-estimated. The image-feature extraction (0.0022 kWh, 180 s) was estimated, not measured. Only energy, power,
-duration and hardware fields are stored; no location data is recorded.
+Every run is tracked with CodeCarbon 3.3.2 through the group run logger (`scripts/run_logger.py`, settings in
+`templates/measurement_method.json`): whole-machine mode, CPU energy **measured** through Intel RAPL, RAM
+**estimated** (CodeCarbon heuristic), no GPU. Emissions use the group's central carbon intensity, **122 gCO₂/kWh**
+(NESO Great Britain average, Nov 2025–Oct 2026), with a 94–237.6 g/kWh range; every record also carries a low/high
+energy range. The image-feature extraction (2.23 Wh, 180 s) was **estimated**, because the RAPL counter was not
+readable at the time. The idle laptop draws about 21 W (60 s idle-baseline record), roughly 41–46% of each learned
+model's energy. Only aggregate energy, power, duration and hardware fields are kept; no location data.
 
-| Run type | Runs | Runtime | Energy | Emissions |
-|---|---:|---:|---:|---:|
-| Debug | 6 | 17 s | 0.00010 kWh | 0.02 g CO₂e |
-| Exploratory | 5 | 145 s | 0.00153 kWh | 0.36 g CO₂e |
-| Final | 16 | 396 s | 0.00472 kWh | 1.12 g CO₂e |
+| Workflow stage (Part A) | Runs | Runtime | Energy (central, range) |
+|---|---:|---:|---:|
+| Final training | 16 | 372 s | 4.66 Wh |
+| Development (debug, exploratory, idle baseline, feature-extraction test) | 14 | 233 s | 2.28 Wh |
+| Artefact production (feature extraction) | 1 | 180 s | 2.23 Wh |
+| Evaluation (test) | 16 | 4 s | 0.06 Wh |
+| **Total** | 47 | 790 s | **9.23 Wh** (6.37–15.01), **1.13 gCO₂e** |
+
+Figures: `results/environment/partA/`. The original records used CodeCarbon's built-in UK value (237.6 g/kWh);
+their emissions were recomputed at 122 g/kWh when converted (energy unchanged).
 
 ## 9. References and reused components
 
@@ -169,3 +198,6 @@ duration and hardware fields are stored; no location data is recorded.
 - He, K. et al. (2016). Deep Residual Learning for Image Recognition. CVPR — ResNet18 weights from torchvision.
 - Kim, Y. (2014). Convolutional Neural Networks for Sentence Classification. EMNLP — TextCNN design.
 - CodeCarbon (https://github.com/mlco2/codecarbon) — energy and emissions tracking.
+- Group run logger, aggregator and logging templates (`scripts/run_logger.py`, `scripts/aggregate_runs.py`,
+  `scripts/energy_tensorboard.py`, `templates/`) — written by a group member (branch `Mehul`), used unchanged.
+- NESO Carbon Intensity API (https://api.carbonintensity.org.uk/) — carbon-intensity figure.

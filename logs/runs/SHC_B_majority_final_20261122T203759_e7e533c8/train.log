@@ -1,0 +1,4 @@
+SHC_B_majority_final_20261122T203759_e7e533c8: task=humanitarian model=majority seed=- run_type=final device=cpu
+train rows 6,126, excluded (missing image) 0, vocab -
+majority class: not_humanitarian
+val macro-F1 0.1372  val acc 0.5220

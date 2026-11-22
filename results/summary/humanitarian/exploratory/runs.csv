@@ -1,0 +1,6 @@
+experiment_id,config,seed,best_epoch,epochs_completed,val_macro_f1,test_macro_f1,test_accuracy,trainable_params,train_time_s,energy_kwh,selected
+SHC_B_text_textcnn_seed0_exploratory_20261122T203231_75c85af1,text_textcnn,0,7,10,0.5300691185183792,,,922033,20.422234486002708,0.00031472369399641295,True
+SHC_B_image_seed0_exploratory_20261122T203253_95c1124e,image,0,4,7,0.5912517889673692,,,132613,3.6367782019951846,3.411225463634958e-05,True
+SHC_B_fusion_textcnn_seed0_exploratory_20261122T203259_c81eaf04,fusion_textcnn,0,10,13,0.7032544519404137,,,1053105,31.00548231799621,0.00047985252319742106,True
+SHC_B_fusion_textcnn_weighted_loss_seed0_exploratory_20261122T203332_1e9c6afa,fusion_textcnn_weighted_loss,0,9,12,0.6920714757133202,,,1053105,32.494596242991975,0.00041092758124389915,True
+SHC_B_fusion_textcnn_weighted_sampler_seed0_exploratory_20261122T203407_acd89535,fusion_textcnn_weighted_sampler,0,8,11,0.6778515954983163,,,1053105,28.479419451003196,0.0003499091945096092,True
