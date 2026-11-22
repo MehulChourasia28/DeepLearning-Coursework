@@ -1,0 +1,396 @@
+offline tracker init
+Multiple instances of codecarbon are allowed to run at the same time.
+Using forced carbon intensity: 122.0 gCO2e/kWh.
+Emissions data (if any) will be saved to file /home/mehulchourasia/Desktop/Mehul/UCL/Deep-Learning/Coursework/logs/runs/A_idle_baseline_20261122T144244_d99585ea/energy.csv
+[setup] RAM Tracking...
+[setup] CPU Tracking...
+[setup] GPU Tracking...
+Tracking Intel CPU via RAPL interface
+Tracking Nvidia GPUs via PyNVML
+	RAPL - Permission denied reading RAPL file /sys/class/powercap/intel-rapl/subsystem/intel-rapl:0/intel-rapl:0:0/energy_uj. You can grant read permission with: sudo chmod -R a+r /sys/class/powercap/* (this does not persist across reboots, see https://docs.codecarbon.io/latest/how-to/troubleshooting/#rapl-permission-denied for a permanent setup); skipping.
+	RAPL - Permission denied reading RAPL file /sys/class/powercap/intel-rapl/intel-rapl:0/intel-rapl:0:0/energy_uj. You can grant read permission with: sudo chmod -R a+r /sys/class/powercap/* (this does not persist across reboots, see https://docs.codecarbon.io/latest/how-to/troubleshooting/#rapl-permission-denied for a permanent setup); skipping.
+	RAPL - Permission denied reading RAPL file /sys/class/powercap/intel-rapl:0/intel-rapl:0:0/energy_uj. You can grant read permission with: sudo chmod -R a+r /sys/class/powercap/* (this does not persist across reboots, see https://docs.codecarbon.io/latest/how-to/troubleshooting/#rapl-permission-denied for a permanent setup); skipping.
+	RAPL - Using 3 package domain(s) for CPU power measurement
+	RAPL - Selected 1 unique RAPL domain(s) after deduplication
+	RAPL - Monitoring domain 'package-0' (displayed as 'Processor Energy Delta_0(kWh)') via MSR at /sys/class/powercap/intel-rapl/subsystem/intel-rapl/intel-rapl:0/energy_uj
+The below tracking methods have been set up:
+                RAM Tracking Method: RAM power estimation model
+                CPU Tracking Method: RAPL
+                GPU Tracking Method: pynvml
+            
+>>> Tracker's metadata:
+  Platform system: Linux-7.0.0-43-generic-x86_64-with-glibc2.39
+  Python version: 3.12.3
+  CodeCarbon version: 3.3.2
+  Available RAM : 30.507 GB
+  CPU count: 24 thread(s) in 1 physical CPU(s)
+  CPU model: AMD Ryzen 9 7900 12-Core Processor
+  GPU count: 1
+  GPU model: 1 x NVIDIA GeForce RTX 5060 Ti
+Energy consumed for RAM : 0.000000 kWh. RAM Power : 20.0 W
+Monitoring GPUs with indices: [0] out of 1 total GPUs
+Energy consumed for all GPUs : 0.000000 kWh. Total GPU Power : 0.0 W
+Delta energy consumed for CPU with intel_rapl : 0.000000 kWh, power : 25.767850466338825 W
+Energy consumed for All CPU : 0.000000 kWh
+0.000000 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.000301 g.CO2eq/s mean an estimation of 9.47810401078589 kg.CO2eq/year
+Energy consumed for RAM : 0.000006 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000008 kWh. Total GPU Power : 27.405258077255326 W
+Delta energy consumed for CPU with intel_rapl : 0.000012 kWh, power : 25.80155963307438 W
+Energy consumed for All CPU : 0.000012 kWh
+0.000025 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.003043 g.CO2eq/s mean an estimation of 95.94851719020822 kg.CO2eq/year
+Energy consumed for RAM : 0.000011 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000015 kWh. Total GPU Power : 27.51314040985562 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 42.00127458153768 W
+Energy consumed for All CPU : 0.000021 kWh
+0.000048 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002792 g.CO2eq/s mean an estimation of 88.05547892253345 kg.CO2eq/year
+Energy consumed for RAM : 0.000017 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000023 kWh. Total GPU Power : 27.611067880992938 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 35.00603802040716 W
+Energy consumed for All CPU : 0.000031 kWh
+0.000070 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002772 g.CO2eq/s mean an estimation of 87.40319691496994 kg.CO2eq/year
+Energy consumed for RAM : 0.000022 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000031 kWh. Total GPU Power : 27.658908946522633 W
+Delta energy consumed for CPU with intel_rapl : 0.000009 kWh, power : 34.320409675847294 W
+Energy consumed for All CPU : 0.000040 kWh
+0.000093 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002768 g.CO2eq/s mean an estimation of 87.27643689965444 kg.CO2eq/year
+Energy consumed for RAM : 0.000028 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000038 kWh. Total GPU Power : 27.71030391539841 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 34.1410520637865 W
+Energy consumed for All CPU : 0.000050 kWh
+0.000116 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002786 g.CO2eq/s mean an estimation of 87.8496860421371 kg.CO2eq/year
+Energy consumed for RAM : 0.000033 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000046 kWh. Total GPU Power : 27.74009296249256 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 34.63437893629328 W
+Energy consumed for All CPU : 0.000060 kWh
+0.000139 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002811 g.CO2eq/s mean an estimation of 88.64035117856352 kg.CO2eq/year
+Energy consumed for RAM : 0.000039 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000054 kWh. Total GPU Power : 27.612086321101433 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 35.34688684744755 W
+Energy consumed for All CPU : 0.000069 kWh
+0.000162 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002782 g.CO2eq/s mean an estimation of 87.7412655709461 kg.CO2eq/year
+Energy consumed for RAM : 0.000044 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000061 kWh. Total GPU Power : 27.56019906023202 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 34.616875134968005 W
+Energy consumed for All CPU : 0.000079 kWh
+0.000185 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002769 g.CO2eq/s mean an estimation of 87.31998564020928 kg.CO2eq/year
+Energy consumed for RAM : 0.000050 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000069 kWh. Total GPU Power : 27.56833738884413 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 34.29094398097939 W
+Energy consumed for All CPU : 0.000089 kWh
+0.000208 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002800 g.CO2eq/s mean an estimation of 88.30175195733257 kg.CO2eq/year
+Energy consumed for RAM : 0.000055 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000077 kWh. Total GPU Power : 27.60261771332634 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 35.208460194787484 W
+Energy consumed for All CPU : 0.000099 kWh
+0.000231 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002823 g.CO2eq/s mean an estimation of 89.01460354840205 kg.CO2eq/year
+Energy consumed for RAM : 0.000061 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000084 kWh. Total GPU Power : 28.494632375035994 W
+Delta energy consumed for CPU with intel_rapl : 0.000011 kWh, power : 35.83458423086188 W
+Energy consumed for All CPU : 0.000110 kWh
+0.000255 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002991 g.CO2eq/s mean an estimation of 94.31351873028477 kg.CO2eq/year
+Energy consumed for RAM : 0.000067 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000092 kWh. Total GPU Power : 28.455001087930203 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 39.891200263655314 W
+Energy consumed for All CPU : 0.000120 kWh
+0.000279 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002893 g.CO2eq/s mean an estimation of 91.23456015577604 kg.CO2eq/year
+Energy consumed for RAM : 0.000072 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000100 kWh. Total GPU Power : 28.67277098469797 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 37.04913771350253 W
+Energy consumed for All CPU : 0.000130 kWh
+0.000303 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002897 g.CO2eq/s mean an estimation of 91.37420317161128 kg.CO2eq/year
+Energy consumed for RAM : 0.000078 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000108 kWh. Total GPU Power : 27.851606629592908 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 36.982555902134685 W
+Energy consumed for All CPU : 0.000140 kWh
+0.000326 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002835 g.CO2eq/s mean an estimation of 89.39277448565872 kg.CO2eq/year
+Energy consumed for RAM : 0.000083 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000116 kWh. Total GPU Power : 28.35280228621301 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 35.95897684852853 W
+Energy consumed for All CPU : 0.000151 kWh
+0.000350 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002896 g.CO2eq/s mean an estimation of 91.33497032704905 kg.CO2eq/year
+Energy consumed for RAM : 0.000089 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000124 kWh. Total GPU Power : 27.659381349815355 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 37.24528974625808 W
+Energy consumed for All CPU : 0.000161 kWh
+0.000373 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002848 g.CO2eq/s mean an estimation of 89.81736906469719 kg.CO2eq/year
+Energy consumed for RAM : 0.000094 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000128 kWh. Total GPU Power : 16.920028773245054 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 36.537542575348176 W
+Energy consumed for All CPU : 0.000170 kWh
+0.000393 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002410 g.CO2eq/s mean an estimation of 76.00201320807038 kg.CO2eq/year
+Energy consumed for RAM : 0.000100 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000133 kWh. Total GPU Power : 15.623250707122919 W
+Delta energy consumed for CPU with intel_rapl : 0.000009 kWh, power : 34.42480439465073 W
+Energy consumed for All CPU : 0.000179 kWh
+0.000412 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002303 g.CO2eq/s mean an estimation of 72.62265890386286 kg.CO2eq/year
+Energy consumed for RAM : 0.000105 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000137 kWh. Total GPU Power : 15.511295689960138 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 32.56228052462278 W
+Energy consumed for All CPU : 0.000189 kWh
+0.000432 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002401 g.CO2eq/s mean an estimation of 75.72203969617041 kg.CO2eq/year
+Energy consumed for RAM : 0.000111 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000141 kWh. Total GPU Power : 15.700600516249562 W
+Delta energy consumed for CPU with intel_rapl : 0.000009 kWh, power : 35.77299977606166 W
+Energy consumed for All CPU : 0.000199 kWh
+0.000451 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002358 g.CO2eq/s mean an estimation of 74.3479718577753 kg.CO2eq/year
+Energy consumed for RAM : 0.000116 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000145 kWh. Total GPU Power : 15.622430202042095 W
+Delta energy consumed for CPU with intel_rapl : 0.000011 kWh, power : 34.11288182961711 W
+Energy consumed for All CPU : 0.000210 kWh
+0.000472 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002560 g.CO2eq/s mean an estimation of 80.71653081244386 kg.CO2eq/year
+Energy consumed for RAM : 0.000122 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000150 kWh. Total GPU Power : 15.562309309745046 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 40.10031423212592 W
+Energy consumed for All CPU : 0.000220 kWh
+0.000491 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002387 g.CO2eq/s mean an estimation of 75.26891238523267 kg.CO2eq/year
+Energy consumed for RAM : 0.000127 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000154 kWh. Total GPU Power : 15.53509591672123 W
+Delta energy consumed for CPU with intel_rapl : 0.000009 kWh, power : 35.08243171889208 W
+Energy consumed for All CPU : 0.000229 kWh
+0.000511 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002345 g.CO2eq/s mean an estimation of 73.95548198546446 kg.CO2eq/year
+Energy consumed for RAM : 0.000133 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000158 kWh. Total GPU Power : 15.461930173209725 W
+Delta energy consumed for CPU with intel_rapl : 0.000009 kWh, power : 33.873194681098 W
+Energy consumed for All CPU : 0.000238 kWh
+0.000529 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002302 g.CO2eq/s mean an estimation of 72.5897338501115 kg.CO2eq/year
+Energy consumed for RAM : 0.000138 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000163 kWh. Total GPU Power : 15.271822563780571 W
+Delta energy consumed for CPU with intel_rapl : 0.000009 kWh, power : 32.65129462786135 W
+Energy consumed for All CPU : 0.000248 kWh
+0.000549 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002328 g.CO2eq/s mean an estimation of 73.43041265422605 kg.CO2eq/year
+Energy consumed for RAM : 0.000144 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000167 kWh. Total GPU Power : 15.52661879396496 W
+Delta energy consumed for CPU with intel_rapl : 0.000009 kWh, power : 33.659209797508424 W
+Energy consumed for All CPU : 0.000257 kWh
+0.000568 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002349 g.CO2eq/s mean an estimation of 74.08975455796029 kg.CO2eq/year
+Energy consumed for RAM : 0.000149 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000171 kWh. Total GPU Power : 15.506040166891372 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 34.02169920663292 W
+Energy consumed for All CPU : 0.000267 kWh
+0.000587 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002377 g.CO2eq/s mean an estimation of 74.96785864928715 kg.CO2eq/year
+Energy consumed for RAM : 0.000155 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000175 kWh. Total GPU Power : 15.492997939157515 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 34.84855269824203 W
+Energy consumed for All CPU : 0.000276 kWh
+0.000607 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002373 g.CO2eq/s mean an estimation of 74.83386929979251 kg.CO2eq/year
+Energy consumed for RAM : 0.000160 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000180 kWh. Total GPU Power : 15.31876830136586 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 34.75781209366135 W
+Energy consumed for All CPU : 0.000286 kWh
+0.000627 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002417 g.CO2eq/s mean an estimation of 76.21615236658786 kg.CO2eq/year
+Energy consumed for RAM : 0.000166 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000184 kWh. Total GPU Power : 15.524234122733281 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 36.22885518790714 W
+Energy consumed for All CPU : 0.000296 kWh
+0.000646 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002364 g.CO2eq/s mean an estimation of 74.55837466752195 kg.CO2eq/year
+Energy consumed for RAM : 0.000172 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000188 kWh. Total GPU Power : 15.437020687219224 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 34.47539541861867 W
+Energy consumed for All CPU : 0.000306 kWh
+0.000666 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002391 g.CO2eq/s mean an estimation of 75.4124022263006 kg.CO2eq/year
+Energy consumed for RAM : 0.000177 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000192 kWh. Total GPU Power : 15.137521140549993 W
+Delta energy consumed for CPU with intel_rapl : 0.000009 kWh, power : 35.344291189298744 W
+Energy consumed for All CPU : 0.000315 kWh
+0.000685 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002337 g.CO2eq/s mean an estimation of 73.68524921837863 kg.CO2eq/year
+Energy consumed for RAM : 0.000183 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000196 kWh. Total GPU Power : 14.233400205677288 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 34.04822572201629 W
+Energy consumed for All CPU : 0.000325 kWh
+0.000704 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002374 g.CO2eq/s mean an estimation of 74.85350957948796 kg.CO2eq/year
+Energy consumed for RAM : 0.000188 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000200 kWh. Total GPU Power : 13.86795839569231 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 36.01090153148333 W
+Energy consumed for All CPU : 0.000335 kWh
+0.000723 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002301 g.CO2eq/s mean an estimation of 72.57808259643839 kg.CO2eq/year
+Energy consumed for RAM : 0.000194 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000204 kWh. Total GPU Power : 13.49136787914112 W
+Delta energy consumed for CPU with intel_rapl : 0.000009 kWh, power : 34.559883871792245 W
+Energy consumed for All CPU : 0.000344 kWh
+0.000742 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002260 g.CO2eq/s mean an estimation of 71.26712000381198 kg.CO2eq/year
+Energy consumed for RAM : 0.000199 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000208 kWh. Total GPU Power : 14.096361402065241 W
+Delta energy consumed for CPU with intel_rapl : 0.000009 kWh, power : 33.63595360441277 W
+Energy consumed for All CPU : 0.000354 kWh
+0.000760 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002305 g.CO2eq/s mean an estimation of 72.68061662641357 kg.CO2eq/year
+Energy consumed for RAM : 0.000205 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000212 kWh. Total GPU Power : 14.717010214507319 W
+Delta energy consumed for CPU with intel_rapl : 0.000011 kWh, power : 34.16391470515455 W
+Energy consumed for All CPU : 0.000365 kWh
+0.000781 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002552 g.CO2eq/s mean an estimation of 80.4912600243243 kg.CO2eq/year
+Energy consumed for RAM : 0.000210 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000216 kWh. Total GPU Power : 13.717643920082187 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 40.76066766826179 W
+Energy consumed for All CPU : 0.000375 kWh
+0.000800 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002284 g.CO2eq/s mean an estimation of 72.04385338008149 kg.CO2eq/year
+Energy consumed for RAM : 0.000216 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000219 kWh. Total GPU Power : 13.882019357456763 W
+Delta energy consumed for CPU with intel_rapl : 0.000013 kWh, power : 34.26245130870816 W
+Energy consumed for All CPU : 0.000387 kWh
+0.000822 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002717 g.CO2eq/s mean an estimation of 85.67118752286689 kg.CO2eq/year
+Energy consumed for RAM : 0.000221 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000223 kWh. Total GPU Power : 12.57549158385382 W
+Delta energy consumed for CPU with intel_rapl : 0.000014 kWh, power : 46.52898627426311 W
+Energy consumed for All CPU : 0.000401 kWh
+0.000845 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002788 g.CO2eq/s mean an estimation of 87.92074184127665 kg.CO2eq/year
+Energy consumed for RAM : 0.000227 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000227 kWh. Total GPU Power : 14.608695423381782 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 49.84121480044863 W
+Energy consumed for All CPU : 0.000411 kWh
+0.000865 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002409 g.CO2eq/s mean an estimation of 75.96366349954934 kg.CO2eq/year
+Energy consumed for RAM : 0.000232 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000232 kWh. Total GPU Power : 18.471850737111218 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 36.702808633606516 W
+Energy consumed for All CPU : 0.000421 kWh
+0.000885 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002467 g.CO2eq/s mean an estimation of 77.79636901037759 kg.CO2eq/year
+Energy consumed for RAM : 0.000238 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000238 kWh. Total GPU Power : 22.860240175867997 W
+Delta energy consumed for CPU with intel_rapl : 0.000012 kWh, power : 34.745854830738274 W
+Energy consumed for All CPU : 0.000433 kWh
+0.000909 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002881 g.CO2eq/s mean an estimation of 90.85189367338508 kg.CO2eq/year
+Energy consumed for RAM : 0.000243 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000246 kWh. Total GPU Power : 28.8714077870009 W
+Delta energy consumed for CPU with intel_rapl : 0.000015 kWh, power : 42.277265617788956 W
+Energy consumed for All CPU : 0.000447 kWh
+0.000937 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.003421 g.CO2eq/s mean an estimation of 107.89259329860391 kg.CO2eq/year
+Energy consumed for RAM : 0.000249 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000254 kWh. Total GPU Power : 28.88972672134905 W
+Delta energy consumed for CPU with intel_rapl : 0.000012 kWh, power : 52.210393108566706 W
+Energy consumed for All CPU : 0.000459 kWh
+0.000962 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.003063 g.CO2eq/s mean an estimation of 96.60008364242597 kg.CO2eq/year
+Energy consumed for RAM : 0.000254 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000262 kWh. Total GPU Power : 28.245536886742528 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 41.650676751009875 W
+Energy consumed for All CPU : 0.000469 kWh
+0.000985 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002829 g.CO2eq/s mean an estimation of 89.22058586232654 kg.CO2eq/year
+Energy consumed for RAM : 0.000260 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000270 kWh. Total GPU Power : 28.48651737325486 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 35.38429581611312 W
+Energy consumed for All CPU : 0.000479 kWh
+0.001009 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002906 g.CO2eq/s mean an estimation of 91.65279333227292 kg.CO2eq/year
+Energy consumed for RAM : 0.000265 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000278 kWh. Total GPU Power : 28.00027507378428 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 37.410767726044526 W
+Energy consumed for All CPU : 0.000489 kWh
+0.001032 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002836 g.CO2eq/s mean an estimation of 89.4323515025424 kg.CO2eq/year
+Energy consumed for RAM : 0.000271 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000283 kWh. Total GPU Power : 16.973846448620524 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 35.86260620957585 W
+Energy consumed for All CPU : 0.000499 kWh
+0.001053 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002499 g.CO2eq/s mean an estimation of 78.80204121480001 kg.CO2eq/year
+Energy consumed for RAM : 0.000276 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000287 kWh. Total GPU Power : 15.885443929656482 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 36.89392058230231 W
+Energy consumed for All CPU : 0.000509 kWh
+0.001072 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002368 g.CO2eq/s mean an estimation of 74.66813425324227 kg.CO2eq/year
+Energy consumed for RAM : 0.000282 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000292 kWh. Total GPU Power : 18.028920008181288 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 34.302455112255316 W
+Energy consumed for All CPU : 0.000519 kWh
+0.001093 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002498 g.CO2eq/s mean an estimation of 78.78581151251166 kg.CO2eq/year
+Energy consumed for RAM : 0.000287 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000297 kWh. Total GPU Power : 18.597486029582182 W
+Delta energy consumed for CPU with intel_rapl : 0.000009 kWh, power : 35.84043592734004 W
+Energy consumed for All CPU : 0.000528 kWh
+0.001113 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002450 g.CO2eq/s mean an estimation of 77.26656782087895 kg.CO2eq/year
+Energy consumed for RAM : 0.000293 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000302 kWh. Total GPU Power : 18.48612780507623 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 33.950910086375764 W
+Energy consumed for All CPU : 0.000538 kWh
+0.001133 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002465 g.CO2eq/s mean an estimation of 77.73660433861511 kg.CO2eq/year
+Energy consumed for RAM : 0.000299 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000306 kWh. Total GPU Power : 15.531421629085285 W
+Delta energy consumed for CPU with intel_rapl : 0.000009 kWh, power : 34.532765945171256 W
+Energy consumed for All CPU : 0.000547 kWh
+0.001152 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002290 g.CO2eq/s mean an estimation of 72.21302222268638 kg.CO2eq/year
+Energy consumed for RAM : 0.000304 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000311 kWh. Total GPU Power : 17.366386470261006 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 32.40013762632173 W
+Energy consumed for All CPU : 0.000556 kWh
+0.001172 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002425 g.CO2eq/s mean an estimation of 76.47113598622266 kg.CO2eq/year
+Energy consumed for RAM : 0.000310 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000316 kWh. Total GPU Power : 15.898147072441978 W
+Delta energy consumed for CPU with intel_rapl : 0.000009 kWh, power : 34.47993141533398 W
+Energy consumed for All CPU : 0.000566 kWh
+0.001191 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002358 g.CO2eq/s mean an estimation of 74.36165320360287 kg.CO2eq/year
+Energy consumed for RAM : 0.000315 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000320 kWh. Total GPU Power : 15.467324544215241 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 33.969192625813456 W
+Energy consumed for All CPU : 0.000576 kWh
+0.001210 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002389 g.CO2eq/s mean an estimation of 75.35509337986059 kg.CO2eq/year
+Energy consumed for RAM : 0.000321 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000325 kWh. Total GPU Power : 17.795808298107918 W
+Delta energy consumed for CPU with intel_rapl : 0.000010 kWh, power : 35.32133699743092 W
+Energy consumed for All CPU : 0.000585 kWh
+0.001230 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002432 g.CO2eq/s mean an estimation of 76.70169427830075 kg.CO2eq/year
+Energy consumed for RAM : 0.000326 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000329 kWh. Total GPU Power : 15.499796179806228 W
+Delta energy consumed for CPU with intel_rapl : 0.000009 kWh, power : 34.27789702296918 W
+Energy consumed for All CPU : 0.000594 kWh
+0.001250 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002349 g.CO2eq/s mean an estimation of 74.07658634186929 kg.CO2eq/year
+Energy consumed for RAM : 0.000332 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000333 kWh. Total GPU Power : 15.650814520094986 W
+Delta energy consumed for CPU with intel_rapl : 0.000009 kWh, power : 32.87348626618399 W
+Energy consumed for All CPU : 0.000604 kWh
+0.001268 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.002314 g.CO2eq/s mean an estimation of 72.98482085916052 kg.CO2eq/year

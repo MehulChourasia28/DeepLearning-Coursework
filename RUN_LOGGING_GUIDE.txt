@@ -1,0 +1,168 @@
+Reusable experiment logging and TensorBoard
+==========================================
+
+scripts/run_logger.py records one environmental/experiment record per run.
+It implements ENVIRONMENTAL_RUN_LOG_FIELDS.txt. scripts/aggregate_runs.py
+turns all records into the submitted experiment log and the report tables.
+
+Files
+-----
+  templates/measurement_method.json   Shared method: carbon intensity + source,
+                                      intensity range, PUE, uncertainty factors.
+                                      Copied into EVERY run record. Change it only
+                                      if assumptions change, with a new
+                                      measurement_method_id.
+  templates/run_config.json           Training run (one per model x seed)
+  templates/evaluation_config.json    Final test evaluation of a selected checkpoint
+  templates/feature_extraction_config.json  Frozen ResNet18 feature caching
+  templates/idle_baseline_config.json Idle machine baseline (fixed background power)
+
+1. Setup (every boot)
+---------------------
+  source .venv/bin/activate
+  python -m pip install -r scripts/requirements-logging.txt   # once
+  sudo chmod a+r /sys/class/powercap/intel-rapl:0/energy_uj   # after EVERY reboot
+
+The chmod lets CodeCarbon read the CPU package energy counter (RAPL), so CPU
+energy is MEASURED rather than estimated from load x TDP. It resets on reboot.
+If you forget, the run still works, but its summary records
+cpu_energy_status="estimated", a note in missing_measurements and a wider
+uncertainty range. Teammates on other hardware are handled the same way.
+
+2. Register every run with a fresh ID
+-------------------------------------
+  from scripts.run_logger import RunLogger, new_run_config
+
+  config = new_run_config("templates/run_config.json", "A_image_seed0_final",
+                          model="image_mlp_on_frozen_resnet18_features", seed=0)
+
+new_run_config adds a timestamp+random suffix, so re-running a cell never
+reuses an ID. Override keys must already exist in the template, which catches
+typos. A repeated or resumed attempt also sets rerun_of and rerun_reason.
+Required: run_type in {debug, exploratory, final, failed}; workflow_stage in
+{development, final_training, evaluation, part_c_extension,
+artefact_production}; a measurement_boundary. Carbon intensity/PUE/uncertainty
+must NOT be set per run (they come from measurement_method.json).
+
+Log EVERY model-development run, including debug checks, pilots and runs
+you abandon. Failed and interrupted runs are kept automatically.
+
+3. Training loop integration
+---------------------------
+The logger records your seed; it does NOT set random seeds, build a model,
+train it or calculate F1. train_one_epoch()/validate() are yours. validate()
+returns macro-F1 over ALL classes on a 0-1 scale.
+
+  optimizer = torch.optim.Adam(model.parameters(), lr=config["initial_lr"])
+  scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+      optimizer, mode="max", factor=0.5, patience=1)
+  bad_epochs = 0
+
+  with RunLogger(config) as run:
+      run.update(trainable_parameters=sum(p.numel() for p in model.parameters()
+                                          if p.requires_grad))
+      for epoch in range(1, config["max_epochs"] + 1):
+          train_loss = train_one_epoch(model, train_loader, optimizer, run=run, epoch=epoch)
+          valid_loss, valid_f1 = validate(model, valid_loader)
+          run.log_epoch(epoch, train_loss=train_loss, valid_loss=valid_loss,
+                        valid_macro_f1=valid_f1, optimizer=optimizer)
+          if run.summary["selected_epoch"] == epoch:
+              bad_epochs = 0
+              checkpoint = run.path / "best.pt"
+              torch.save({"epoch": epoch, "model": model.state_dict(),
+                          "optimizer": optimizer.state_dict()}, checkpoint)
+              run.update(checkpoint_path=str(checkpoint))
+          else:
+              bad_epochs += 1
+          scheduler.step(valid_f1)
+          if bad_epochs >= config["early_stopping_patience"]:
+              run.early_stop()
+              break
+  print(run.describe())
+
+Inside train_one_epoch(), after each optimizer.step():
+  run.log_batch(loss.item(), optimizer, epoch=epoch, batch=batch_index,
+                examples=labels.size(0))
+
+4. Final test evaluation (separate record, linked to the training run)
+---------------------------------------------------------------------
+  eval_config = new_run_config(
+      "templates/evaluation_config.json", "A_image_seed0_test_eval",
+      model=config["model"], seed=0,
+      evaluated_experiment_id=config["experiment_id"],
+      checkpoint_input_path=str(checkpoint))
+  with RunLogger(eval_config) as run:
+      ...load checkpoint, predict test set, save predictions...
+      run.log_test(test_macro_f1)
+      run.update(predictions_path="path/to/predictions.csv")
+
+Evaluation records must name an existing evaluated_experiment_id and set
+checkpoint_used=true. Test scores are rejected for non-final run types. The
+aggregator joins evaluation to training via evaluated_experiment_id.
+
+5. What the logger records automatically
+---------------------------------------
+- Hardware: CPU/GPU model, device_count, RAM, OS.
+- runtime_seconds (wall clock of the whole context, incl. tracker setup) and
+  tracker_duration_seconds (CodeCarbon's measured interval).
+- energy_kwh and cpu/gpu/ram_energy_kwh; emissions_kgco2e from the fixed
+  central carbon intensity (122 gCO2/kWh, see measurement_method.json).
+- cpu/gpu/ram_energy_status: measured or estimated, and measurement_method
+  describing each (GPU: NVML energy counter; CPU: RAPL if readable; RAM:
+  always estimated by a CodeCarbon heuristic).
+- energy_kwh_low/high and emissions_kgco2e_low/high from the per-component
+  factors, the unmetered-overhead factor and the carbon-intensity range;
+  uncertainty_factors_applied lists exactly which factors were used.
+- Average power and CPU/GPU utilisation (fractions) for engineering estimates.
+- Failures: run_status failed/interrupted, run_type becomes "failed",
+  original_run_type keeps the purpose, failure_reason keeps the exception.
+- f1_scale = "0-1".
+
+A process crash or power loss cannot run cleanup: the summary stays
+"running". Keep it; the aggregator warns about it. Explain it in
+missing_measurements (energy_timeseries.csv holds energy up to the crash).
+
+6. Build the submitted log and report tables
+--------------------------------------------
+  python -m scripts.aggregate_runs
+writes into logs/:
+  run_log.csv            One row per run (the compulsory experiment log)
+  stage_summary.csv      Table 1: runs, runtime, energy, emissions (+ranges) by stage
+  model_summary.csv      Table 2: final models: seeds, val/test macro-F1 mean/std,
+                         energy/emissions (training + linked evaluation), F1/kWh
+  aggregate_summary.json Run counts by type/status, totals, wasted-compute ratio,
+                         warnings about incomplete records
+logs/ is NOT gitignored: it is part of the reproducibility artefacts.
+
+7. Measurement boundary and idle baseline
+-----------------------------------------
+Tracking uses CodeCarbon machine mode: the whole computer's CPU/GPU/RAM, so
+the idle desktop, the GPU driving the display and other open programs
+(including TensorBoard) are included. Run the idle-baseline cell in
+PartA.ipynb once per machine/session with other programs closed. Its average
+power is the fixed component for the 10x/100x scaling analysis.
+
+Not included (state in the report): monitor, network equipment, lighting,
+embodied carbon, dataset download, centrally prepared resources. Wall-socket
+and PSU losses are not metered; they are only in the uncertainty upper bound.
+
+8. TensorBoard
+--------------
+  tensorboard --logdir logs/runs --port 6006 --reload_interval 2
+Scalars include Loss/*, F1/valid_macro, LR/*, live Energy/*, Power/* and
+Emissions/cumulative_kgco2e. Do NOT sum energy_timeseries.csv rows (they are
+cumulative); use summary.json / run_log.csv for totals.
+
+9. Feature extraction and Part B
+--------------------------------
+Feature extraction is workflow_stage="artefact_production", run_type="final",
+activity="feature_extraction", cache_used=false. All 8,079 Part B images are
+in the Part A cache (12,708 images): Part B should reuse it by image_id
+rather than re-extract, and cite this as a mitigation action.
+
+Sources
+-------
+ENVIRONMENTAL_RUN_LOG_FIELDS.txt and the coursework environmental-impact guidance.
+NESO Carbon Intensity API: https://api.carbonintensity.org.uk/
+https://docs.codecarbon.io/latest/reference/api/
+https://docs.pytorch.org/docs/2.11/tensorboard.html

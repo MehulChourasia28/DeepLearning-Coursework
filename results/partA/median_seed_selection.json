@@ -1,0 +1,32 @@
+{
+  "selected_at": "2026-11-22T14:59:28.342911+00:00",
+  "rule": "median validation macro-F1 across seeds 0-2 (majority baseline has one run)",
+  "test_results_inspected_before_selection": false,
+  "runs": {
+    "majority": {
+      "experiment_id": "A_majority_final_20261122T145904_6b148d88",
+      "seed": null,
+      "validation_macro_f1": 0.40167364016736407
+    },
+    "text_textcnn": {
+      "experiment_id": "A_text_textcnn_seed0_final_20261122T145904_46ece5ef",
+      "seed": 0,
+      "validation_macro_f1": 0.785366710704352
+    },
+    "image_mlp": {
+      "experiment_id": "A_image_mlp_seed2_final_20261122T145913_31f9e3b7",
+      "seed": 2,
+      "validation_macro_f1": 0.7940991674956803
+    },
+    "fusion_textcnn": {
+      "experiment_id": "A_fusion_textcnn_seed1_final_20261122T145916_a1db22b5",
+      "seed": 1,
+      "validation_macro_f1": 0.8506864522005821
+    },
+    "fusion_bilstm": {
+      "experiment_id": "A_fusion_bilstm_seed2_final_20261122T145925_aaa4d44d",
+      "seed": 2,
+      "validation_macro_f1": 0.8518228684416461
+    }
+  }
+}

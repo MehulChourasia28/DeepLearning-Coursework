@@ -1,0 +1,28 @@
+{
+  "runs": 34,
+  "runs_by_run_type": {
+    "debug": 6,
+    "exploratory": 0,
+    "final": 28,
+    "failed": 0
+  },
+  "runs_by_status": {
+    "completed": 22,
+    "early-stopped": 12
+  },
+  "epochs_completed_total": 87,
+  "runtime_seconds_total": 151.1398625989982,
+  "energy_kwh_total": 0.004692883287729269,
+  "energy_kwh_low_total": 0.003759973310110431,
+  "energy_kwh_high_total": 0.006265435078570551,
+  "emissions_kgco2e_total": 0.0005725317611029709,
+  "emissions_kgco2e_low_total": 0.0003534374911503805,
+  "emissions_kgco2e_high_total": 0.0014885984548824985,
+  "failed_energy_kwh": 0,
+  "wasted_compute_ratio_failed_over_total": 0.0,
+  "measurement_method_ids": [
+    "M1_codecarbon332_rapl_nvml_neso_2025-11_2026-10"
+  ],
+  "warnings": [],
+  "note": "Each run is counted once in its own workflow_stage. Add any unreported exploratory energy to the wasted-compute numerator by hand if applicable."
+}

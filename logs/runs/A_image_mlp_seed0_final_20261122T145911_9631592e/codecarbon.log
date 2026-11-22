@@ -1,0 +1,33 @@
+offline tracker init
+Multiple instances of codecarbon are allowed to run at the same time.
+Using forced carbon intensity: 122.0 gCO2e/kWh.
+Emissions data (if any) will be saved to file /home/mehulchourasia/Desktop/Mehul/UCL/Deep-Learning/Coursework/logs/runs/A_image_mlp_seed0_final_20261122T145911_9631592e/energy.csv
+Monitoring GPUs with indices: [0] out of 1 total GPUs
+	RAPL - Permission denied reading RAPL file /sys/class/powercap/intel-rapl/subsystem/intel-rapl:0/intel-rapl:0:0/energy_uj. You can grant read permission with: sudo chmod -R a+r /sys/class/powercap/* (this does not persist across reboots, see https://docs.codecarbon.io/latest/how-to/troubleshooting/#rapl-permission-denied for a permanent setup); skipping.
+	RAPL - Permission denied reading RAPL file /sys/class/powercap/intel-rapl/intel-rapl:0/intel-rapl:0:0/energy_uj. You can grant read permission with: sudo chmod -R a+r /sys/class/powercap/* (this does not persist across reboots, see https://docs.codecarbon.io/latest/how-to/troubleshooting/#rapl-permission-denied for a permanent setup); skipping.
+	RAPL - Permission denied reading RAPL file /sys/class/powercap/intel-rapl:0/intel-rapl:0:0/energy_uj. You can grant read permission with: sudo chmod -R a+r /sys/class/powercap/* (this does not persist across reboots, see https://docs.codecarbon.io/latest/how-to/troubleshooting/#rapl-permission-denied for a permanent setup); skipping.
+	RAPL - Using 3 package domain(s) for CPU power measurement
+	RAPL - Selected 1 unique RAPL domain(s) after deduplication
+	RAPL - Monitoring domain 'package-0' (displayed as 'Processor Energy Delta_0(kWh)') via MSR at /sys/class/powercap/intel-rapl/subsystem/intel-rapl/intel-rapl:0/energy_uj
+>>> Tracker's metadata:
+  Platform system: Linux-7.0.0-43-generic-x86_64-with-glibc2.39
+  Python version: 3.12.3
+  CodeCarbon version: 3.3.2
+  Available RAM : 30.507 GB
+  CPU count: 24 thread(s) in 1 physical CPU(s)
+  CPU model: AMD Ryzen 9 7900 12-Core Processor
+  GPU count: 1
+  GPU model: 1 x NVIDIA GeForce RTX 5060 Ti
+Energy consumed for RAM : 0.000000 kWh. RAM Power : 20.0 W
+Monitoring GPUs with indices: [0] out of 1 total GPUs
+Energy consumed for all GPUs : 0.000000 kWh. Total GPU Power : 0.0 W
+Delta energy consumed for CPU with intel_rapl : 0.000000 kWh, power : 41.96174141692931 W
+Energy consumed for All CPU : 0.000000 kWh
+0.000000 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.001665 g.CO2eq/s mean an estimation of 52.51797465289359 kg.CO2eq/year
+Energy consumed for RAM : 0.000007 kWh. RAM Power : 20.0 W
+Energy consumed for all GPUs : 0.000013 kWh. Total GPU Power : 36.82384392992662 W
+Delta energy consumed for CPU with intel_rapl : 0.000024 kWh, power : 47.82844389113796 W
+Energy consumed for All CPU : 0.000024 kWh
+0.000045 kWh of electricity and 0.000000 L of water were used since the beginning.
+0.004174 g.CO2eq/s mean an estimation of 131.62178869714677 kg.CO2eq/year

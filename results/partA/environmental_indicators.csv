@@ -1,0 +1,6 @@
+Model,Seeds,Test macro-F1,Energy per seed (kWh),"Energy, all seeds (kWh)",Emissions per seed (kgCO2e),Macro-F1 per kWh,Macro-F1 per kgCO2e,Marginal gCO2e per +0.01 macro-F1 vs majority,Idle-draw share of energy
+Majority class,1,0.4017,0.000000,0.000000,0.0000000,-,-,-,-
+Text only (TextCNN),3,0.7799,0.000098,0.000293,0.0000119,"7,988","65,478",0.0003,55%
+Image only (ResNet18),3,0.8032,0.000031,0.000093,0.0000038,"25,839","211,792",0.0001,63%
+Fusion (TextCNN + image),3,0.8604,0.000094,0.000283,0.0000115,"9,132","74,855",0.0003,53%
+Fusion (BiLSTM + image),3,0.8618,0.000084,0.000253,0.0000103,"10,230","83,855",0.0002,57%

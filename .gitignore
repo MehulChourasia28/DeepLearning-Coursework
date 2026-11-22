@@ -4,3 +4,5 @@ venv/
 __pycache__/
 *.part
 data/
+.~lock.*#
+# Run logs (logs/) and results (results/) are submission artefacts: do not ignore them.

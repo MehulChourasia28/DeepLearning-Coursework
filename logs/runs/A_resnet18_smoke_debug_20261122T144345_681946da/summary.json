@@ -1,0 +1,164 @@
+{
+  "experiment_id": "A_resnet18_smoke_debug_20261122T144345_681946da",
+  "coursework_part": "A",
+  "task": "binary_informativeness",
+  "activity": "debug_forward_pass",
+  "workflow_stage": "development",
+  "run_type": "debug",
+  "model": "frozen_resnet18_IMAGENET1K_V1_fc_identity_512_features",
+  "seed": null,
+  "training_examples": 9601,
+  "dataset_fraction": 1.0,
+  "batch_size": 64,
+  "max_epochs": null,
+  "early_stopping_patience": null,
+  "optimizer": null,
+  "initial_lr": null,
+  "scheduler": null,
+  "country_iso_code": "GBR",
+  "tracking_mode": "machine",
+  "measurement_method_file": "templates/measurement_method.json",
+  "missing_measurements": "",
+  "measure_power_secs": 1,
+  "measurement_boundary": "Loading pretrained ResNet18, reading/preprocessing one training batch and one forward pass to check the 512-d output; no cache written. CodeCarbon machine mode includes background power (see idle-baseline run).",
+  "cache_used": false,
+  "cache_path": null,
+  "checkpoint_used": false,
+  "checkpoint_input_path": null,
+  "evaluated_experiment_id": null,
+  "reuse_notes": "Not applicable: architecture check only; no artefacts produced.",
+  "rerun_of": null,
+  "rerun_reason": null,
+  "engineering_estimate_inputs": null,
+  "notes": "Debug check before feature extraction.",
+  "feature_dimensions": 512,
+  "weights": "IMAGENET1K_V1",
+  "split_examples": {
+    "train": 9601,
+    "valid": 1573,
+    "test": 1534
+  },
+  "measurement_method_id": "M1_codecarbon332_rapl_nvml_neso_2025-11_2026-10",
+  "carbon_intensity_gco2e_per_kwh": 122,
+  "carbon_intensity_source": "NESO Carbon Intensity API (api.carbonintensity.org.uk/intensity/stats), Great Britain national half-hourly actual intensity; mean of monthly averages Nov 2025 to Oct 2026 weighted by days = 121.7, rounded to 122 gCO2/kWh. National 12-month average, NOT time-specific or regional. NESO reports direct generation CO2, not life-cycle CO2e, and excludes transmission/distribution losses; this is covered by the upper bound.",
+  "carbon_intensity_type": "national_12_month_average",
+  "carbon_intensity_range_gco2e_per_kwh": [
+    94,
+    237.589
+  ],
+  "carbon_intensity_range_source": "Low: lowest NESO monthly national average in the same 12 months (Apr 2026, 94 g/kWh). High: CodeCarbon 3.3.2 bundled UK (GBR) annual intensity for 2023 (237.589 g/kWh, global_energy_mix.json), a higher mix-based estimate that brackets the CO2 vs CO2e and older-grid-mix methodology differences.",
+  "pue": 1.0,
+  "pue_source": "Personal desktop, no data-centre cooling or facility overhead; PUE fixed at 1.0.",
+  "component_energy_factors": {
+    "gpu_measured": [
+      0.95,
+      1.05
+    ],
+    "cpu_measured": [
+      0.9,
+      1.1
+    ],
+    "cpu_estimated": [
+      0.5,
+      2.0
+    ],
+    "gpu_estimated": [
+      0.5,
+      2.0
+    ],
+    "ram_estimated": [
+      0.25,
+      1.0
+    ],
+    "unknown": [
+      0.5,
+      2.0
+    ],
+    "none": [
+      1.0,
+      1.0
+    ]
+  },
+  "unmeasured_overhead_factor": [
+    1.0,
+    1.25
+  ],
+  "uncertainty_basis": "Each component's energy is multiplied by a low/high factor chosen by how it was obtained. GPU (NVIDIA NVML board energy counter) +/-5%. CPU from the RAPL package energy counter +/-10% (AMD RAPL is the processor's own model, not a wall-socket meter). CPU estimated from load x TDP if RAPL is unreadable 0.5x to 2x. RAM is always a CodeCarbon heuristic (5 W per guessed DIMM; 4 DIMMs = 20 W for 30.5 GB) and two DDR5 modules can draw about 5 W, so 0.25x to 1x. The total is then multiplied by 1.0 to 1.25 for unmetered motherboard, storage, fans and PSU conversion loss. Emissions bounds combine the energy bounds with the carbon-intensity range. These are stated engineering assumptions, not statistical confidence intervals.",
+  "measurement_exclusions": "Monitor, network equipment, room lighting, embodied/manufacturing carbon, dataset download and centrally prepared resources. Wall-socket losses are not metered; they are covered only by the uncertainty upper bound.",
+  "run_status": "completed",
+  "original_run_type": null,
+  "failure_reason": null,
+  "started_at": "2026-11-22T14:43:45.793388+00:00",
+  "finished_at": "2026-11-22T14:43:46.521138+00:00",
+  "epochs_completed": 0,
+  "selected_epoch": null,
+  "stopping_point": {
+    "split": "train",
+    "epoch": null,
+    "batch": 1
+  },
+  "runtime_seconds": 0.7277549099999305,
+  "tracker_duration_seconds": 0.7012260929996046,
+  "energy_kwh": 1.8198969353421016e-05,
+  "energy_kwh_low": 1.4119724091556574e-05,
+  "energy_kwh_high": 2.4227754368064994e-05,
+  "emissions_kgco2e": 2.220274261117364e-06,
+  "emissions_kgco2e_low": 1.327254064606318e-06,
+  "emissions_kgco2e_high": 5.756247932554193e-06,
+  "uncertainty_factors_applied": {
+    "cpu": {
+      "factor_key": "cpu_measured",
+      "low": 0.9,
+      "high": 1.1
+    },
+    "gpu": {
+      "factor_key": "gpu_measured",
+      "low": 0.95,
+      "high": 1.05
+    },
+    "ram": {
+      "factor_key": "ram_estimated",
+      "low": 0.25,
+      "high": 1.0
+    },
+    "unmeasured_overhead": {
+      "low": 1.0,
+      "high": 1.25
+    },
+    "carbon_intensity_gco2e_per_kwh": {
+      "low": 94,
+      "high": 237.589
+    }
+  },
+  "cpu_energy_kwh": 9.327061628309824e-06,
+  "gpu_energy_kwh": 5.010559563999907e-06,
+  "ram_energy_kwh": 3.861348161111285e-06,
+  "cpu_energy_status": "measured",
+  "gpu_energy_status": "measured",
+  "ram_energy_status": "estimated",
+  "measurement_method": "CodeCarbon 3.3.2 OfflineEmissionsTracker, tracking_mode=machine; CPU: measured (intel_rapl package energy counter); GPU: measured (GPU driver energy counter (pynvml/amdsmi)); RAM: estimated (CodeCarbon heuristic, 5 W per estimated DIMM)",
+  "cpu_power_w_avg": 40.25967001418513,
+  "gpu_power_w_avg": 13.001627650244501,
+  "ram_power_w_avg": 20.0,
+  "cpu_utilisation_fraction": 0.0,
+  "gpu_utilisation_fraction": 0.0,
+  "f1_scale": "0-1",
+  "validation_macro_f1": null,
+  "test_macro_f1": null,
+  "checkpoint_path": null,
+  "predictions_path": null,
+  "training_examples_processed": 0,
+  "examples_processed": 64,
+  "execution_device": "cuda",
+  "cpu_model": "AMD Ryzen 9 7900 12-Core Processor",
+  "gpu_model": "NVIDIA GeForce RTX 5060 Ti",
+  "device_count": 1,
+  "ram_gb": 30.50732421875,
+  "os": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "tracker_name": "CodeCarbon",
+  "tracker_version": "3.3.2",
+  "torch_version": "2.11.0+cu128",
+  "tensorboard_version": "2.21.0",
+  "trainable_parameters": 0,
+  "cache_output_paths": []
+}

@@ -1,0 +1,13 @@
+# Exact environment used for the logged Part A runs (Ubuntu 24.04, Python 3.12.3, RTX 5060 Ti).
+# The RTX 50-series (Blackwell) needs CUDA 12.8 builds of PyTorch; the group cu124 pins do not support it.
+# Install: python -m pip install -r requirements-partA-cu128.txt
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.11.0+cu128
+torchvision==0.26.0+cu128
+numpy==2.5.4
+matplotlib==3.11.2
+requests==2.34.2
+Pillow==12.3.0
+pandas==3.1.1
+ipykernel==7.4.0
+-r scripts/requirements-logging.txt

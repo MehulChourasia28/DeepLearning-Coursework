@@ -1,0 +1,146 @@
+Environmental impact fields to log for each training run
+=======================================================
+
+Source: CrisisMMD_Environmental_Impact_Reporting_Guidance_(Description_2).docx,
+especially Sections 2, 3 and 5. Applies to Parts A, B and C.
+
+Keep one record per run in CSV, JSON or a tracker export, and submit the log
+with the reproducibility artefacts. Include debug, exploratory, final, failed,
+interrupted and early-stopped runs. Register the run before starting it and
+complete its measurements and outcome afterwards. Do not discard failed runs.
+
+1. Compulsory fields for every run
+---------------------------------
+
+The following are the guidance's compulsory field groups, expanded into
+suggested column names so they can be implemented directly.
+
+01. experiment_id
+    A unique identifier, also used in configuration, checkpoint and log names.
+    Example: A_fusion_textcnn_seed0_final_001.
+
+02. coursework_part, task
+    A, B or C, plus the prediction task (binary informativeness, five-class
+    humanitarian, or the specific optional extension task).
+
+03. run_type
+    One of: debug, exploratory, final, failed.
+    Keep run_type separate from run_status below. If a run fails, retain its
+    original purpose in the notes rather than losing that information.
+
+04. model, seed
+    Architecture/fusion method and random seed. Identify the text encoder,
+    image encoder and relevant variant, such as the imbalance intervention.
+
+05. training_examples, dataset_fraction
+    Number of training examples in the subset used and the fraction of the
+    full training split, for example 9601 and 1.0 for all Part A training data.
+    For an interrupted run, also record how much was actually processed.
+    Do not confuse unique training examples with examples processed repeatedly
+    across multiple epochs.
+
+06. epochs_completed, stopping_point, batch_size
+    Completed epochs, where training stopped and the batch size.
+    If training stops mid-epoch, record the epoch and batch/step reached.
+
+07. execution_device, cpu_model, gpu_model, device_count, ram_gb
+    Record CPU/GPU hardware and number of execution devices; include system
+    RAM if known. For a CPU-only run, record gpu_model as N/A.
+
+08. runtime_seconds
+    Actual elapsed wall-clock time for the run, including time consumed before
+    a failure or interruption. Use seconds consistently throughout the log.
+
+09. energy_kwh
+    Measured or estimated electricity used during the run, in kWh.
+    Record which method was used; see Section 2 below.
+
+10. carbon_intensity_gco2e_per_kwh, carbon_intensity_source
+    Carbon-intensity value and its source or explicit assumption. State the
+    location/region and whether the value is time-specific or an annual average.
+
+11. emissions_kgco2e
+    Operational emissions for the run:
+      emissions_kgco2e = energy_kwh * carbon_intensity_gco2e_per_kwh / 1000
+    These are operational emissions, not a complete life-cycle footprint.
+
+12. validation_macro_f1, test_macro_f1
+    Record validation macro-F1. Record test macro-F1 only for final evaluation;
+    leave it blank for debugging, exploration and model selection.
+    State whether F1 uses the 0-1 or 0-100 scale and use one scale consistently.
+    If a run fails before scoring, leave F1 blank and explain why; do not use 0
+    to stand for a missing score.
+
+13. run_status
+    One of: completed, early-stopped, failed, interrupted.
+    Include the failure/interruption reason where applicable.
+
+14. cache_used, checkpoint_used, reuse_notes
+    Whether a cache or checkpoint was used, which artefact was reused, and
+    whether reuse avoided repeated computation. For example, identify the
+    frozen image-feature cache or the checkpoint used to resume training.
+
+15. rerun_reason (required when applicable)
+    Why the run was repeated: error recovery, planned seed replication,
+    changed configuration, or another stated reason. Reference the earlier
+    experiment_id when the new run repeats or resumes an earlier attempt.
+
+2. Required measurement documentation
+-------------------------------------
+
+The guidance also requires the method and uncertainty to be documented. Keep
+these details with each run, or store a shared method configuration and record
+its identifier in each affected run. Update it whenever the assumptions change.
+
+- measurement_method: directly measured or estimated; explain how.
+- tracker_name, tracker_version: use the teaching team's approved tool where
+  available. State whether it measures power or estimates it from hardware.
+- measurement_boundary: what the timer/tracker includes and excludes. Start
+  and stop it around each logically distinct run, not an entire mixed notebook.
+- uncertainty: central energy/emissions estimate and a plausible range, with
+  the assumptions behind the range. Do not imply unsupported precision.
+- missing_measurements: explain unavailable readings and any values
+  reconstructed from runtime logs.
+
+If using the backup engineering estimate, retain every input:
+  runtime_hours, cpu_power_w, cpu_utilisation, gpu_power_w,
+  gpu_utilisation, ram_power_w, pue, and the sensitivity assumptions/range.
+
+  energy_kwh = runtime_hours *
+      (cpu_power_w * cpu_utilisation + gpu_power_w * gpu_utilisation
+       + ram_power_w) * pue / 1000
+
+Utilisation is a fraction between 0 and 1. Power is in watts. Use zero for
+the GPU contribution on CPU-only runs. PUE represents facility overhead.
+
+3. Useful supporting columns
+----------------------------
+
+These are implementation suggestions to make aggregation and reproduction
+easier; they are not additional fields from the compulsory Section 3 table.
+
+- workflow_stage: development, final_training, evaluation, part_c_extension,
+  or artefact_production. Assign each record once when summing stage totals
+  so Part C work is not counted twice.
+- started_at, finished_at: timestamps with timezone.
+- config_path: saved hyperparameters/configuration for the run.
+- selected_epoch: checkpoint chosen using validation performance.
+- total_training_examples_processed: actual throughput across epochs/batches.
+- checkpoint_path, predictions_path, tracker_log_path: reusable output paths.
+- notes: anomalies, changes in hardware, or other context.
+
+4. Scope reminders
+------------------
+
+Track all model-development work, including pilots and debugging. Also account
+for evaluation, Part C work and computationally significant artefact production
+as separate runs/records where appropriate. If they are included in a training
+record instead, state that boundary and do not count their energy again.
+
+The original dataset download and centrally prepared teaching resources may
+be excluded. If your group regenerates image features, account for that work.
+State exclusions explicitly in the report. Keep both absolute energy/emissions
+and performance: an efficiency ratio does not replace the underlying totals.
+
+Before each run: register ID, purpose, model, seed, subset, hardware and method.
+After each run: fill in runtime, energy, emissions, outcome, reuse and rerun notes.
