@@ -93,7 +93,7 @@ python3.12 -m venv .venv
 ```
 
 **Activate it.** Use the line for your system:
-
+ 
 | System | Command |
 | --- | --- |
 | Windows (Command Prompt) | `.venv\Scripts\activate` |
