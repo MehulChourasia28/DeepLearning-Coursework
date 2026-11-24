@@ -4,3 +4,7 @@ venv/
 __pycache__/
 *.part
 data/
+
+# Part A: keep only the selected checkpoint (Fusion TextCNN, median-validation seed 0)
+results/part_a/runs/*/best.pt
+!results/part_a/runs/AYN-A-027/best.pt

@@ -1,0 +1,4 @@
+model,ours_test_accuracy_mean_%,ours_std,ofli_2020_accuracy_%,their_setup
+Text (TextCNN),82.4,0.5,80.8,CNN + pretrained word2vec
+Image (ResNet18),81.8,0.9,83.3,VGG16 (fine-tuned)
+Fusion (TextCNN),87.7,0.4,84.4,VGG16 + text CNN

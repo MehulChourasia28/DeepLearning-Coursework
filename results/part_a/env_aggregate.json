@@ -1,0 +1,85 @@
+{
+  "runs_total": 41,
+  "runs_by_type": {
+    "final": 36,
+    "debug": 3,
+    "failed": 2
+  },
+  "runs_by_status": {
+    "completed": 24,
+    "early-stopped": 15,
+    "failed": 2
+  },
+  "runs_by_activity": {
+    "training": 18,
+    "test_evaluation": 16,
+    "feature_extraction": 3,
+    "report_generation": 3,
+    "idle_baseline": 1
+  },
+  "epochs_completed_total": 104.0,
+  "runtime_seconds_total": 1128.3999999999999,
+  "energy_kwh_total": 0.01434180307167856,
+  "energy_kwh_range": [
+    0.00717090153583928,
+    0.0358545076791964
+  ],
+  "emissions_kgco2e_total": 0.0017496999747447844,
+  "emissions_kgco2e_range": [
+    0.0006740647443688923,
+    0.008518636624992594
+  ],
+  "engineering_estimate_kwh_total": 0.008220279484191483,
+  "wasted_compute_ratio": 0.009342021381632214,
+  "wasted_compute_definition": "(E_failed + E_unreported_exploratory) / E_total_training; no unreported exploratory runs (all runs are logged).",
+  "runs_missing_energy": [
+    "AYN-A-001"
+  ],
+  "superseded_final_runs": [],
+  "measurement_method": {
+    "measurement_method_id": "M1-AYN_codecarbon282_constant_plus_util_estimate",
+    "tracker_name": "CodeCarbon OfflineEmissionsTracker",
+    "tracking_mode": "machine",
+    "measure_power_secs": 5,
+    "country_iso_code": "GBR",
+    "carbon_intensity_gco2e_per_kwh": 122,
+    "carbon_intensity_type": "national_12_month_average",
+    "carbon_intensity_source": "NESO Carbon Intensity API (api.carbonintensity.org.uk), Great Britain national intensity, mean of monthly averages Nov 2025 - Oct 2026 = 121.7, rounded to 122 gCO2/kWh. Annual national average, not time-specific or regional. Same value as the group's shared measurement method.",
+    "carbon_intensity_range_gco2e_per_kwh": [
+      94,
+      237.589
+    ],
+    "carbon_intensity_range_source": "Low: lowest NESO monthly national average in the same 12 months (Apr 2026). High: CodeCarbon bundled GBR annual intensity (237.589 g/kWh).",
+    "pue": 1.0,
+    "pue_source": "Personal laptop, no data-centre cooling overhead.",
+    "cpu_power_w": 45.0,
+    "cpu_power_source": "Intel i5-13500H Processor Base Power 45 W (max turbo 95 W).",
+    "ram_power_w_per_8gb": 3.0,
+    "energy_factor_low": 0.5,
+    "energy_factor_high": 2.0,
+    "unmeasured_overhead_high": 1.25,
+    "uncertainty_basis": "CPU energy is estimated (no RAPL/Power Gadget counter on this Windows laptop), so the total is bracketed at 0.5x-2x, then x1.25 on the high side for unmetered motherboard, storage, fans, display and charger losses. Emission bounds combine this with the carbon-intensity range. Engineering assumptions, not statistical confidence intervals.",
+    "measurement_exclusions": "Monitor, network equipment, lighting, embodied/manufacturing carbon, dataset download and report writing. Charger/battery conversion losses only in upper bound."
+  },
+  "f1_scale": "0-1",
+  "std": "sample standard deviation (ddof=1) over seeds 0, 1, 2",
+  "storage_scaling": {
+    "feature_cache_bytes": {
+      "1x_MB": 29.43224,
+      "10x_MB": 294.3224,
+      "100x_MB": 2943.224
+    },
+    "predictions_bytes": {
+      "1x_MB": 15.363651,
+      "10x_MB": 153.63651,
+      "100x_MB": 1536.3651
+    },
+    "checkpoints_bytes": {
+      "1x_MB": 63.973828,
+      "10x_MB": 63.973828,
+      "100x_MB": 63.973828
+    },
+    "note": "Cache and predictions scale with examples. Checkpoints are listed as fixed, but the embedding table grows sub-linearly with vocabulary size."
+  },
+  "note": "Tables exclude this report-generation run (AYN-A-042); it appears in the run log and in the next regeneration."
+}

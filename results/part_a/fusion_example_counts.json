@@ -1,0 +1,35 @@
+{
+  "runs_compared": {
+    "fusion_textcnn": {
+      "seed": 0,
+      "train_id": "AYN-A-027",
+      "eval_id": "AYN-A-028",
+      "val_macro_f1": 0.8501351254005545
+    },
+    "text_textcnn": {
+      "seed": 1,
+      "train_id": "AYN-A-011",
+      "eval_id": "AYN-A-012",
+      "val_macro_f1": 0.7923430446109101
+    },
+    "image_mlp": {
+      "seed": 0,
+      "train_id": "AYN-A-021",
+      "eval_id": "AYN-A-022",
+      "val_macro_f1": 0.7760778846544286
+    },
+    "fusion_bilstm": {
+      "seed": 0,
+      "train_id": "AYN-A-033",
+      "eval_id": "AYN-A-034",
+      "val_macro_f1": 0.848318248529468
+    }
+  },
+  "test_examples": 1534,
+  "category_counts": {
+    "helps: fusion right, text and image both wrong": 15,
+    "helps: fusion right, one single modality wrong": 294,
+    "fails: fusion wrong, text and image both right": 26,
+    "fails: fusion wrong, one single modality right": 107
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "fusion_bilstm": {
+    "seed": 0,
+    "train_id": "AYN-A-033",
+    "eval_id": "AYN-A-034",
+    "val_macro_f1": 0.848318248529468
+  },
+  "fusion_textcnn": {
+    "seed": 0,
+    "train_id": "AYN-A-027",
+    "eval_id": "AYN-A-028",
+    "val_macro_f1": 0.8501351254005545
+  },
+  "image_mlp": {
+    "seed": 0,
+    "train_id": "AYN-A-021",
+    "eval_id": "AYN-A-022",
+    "val_macro_f1": 0.7760778846544286
+  },
+  "majority": {
+    "seed": 0,
+    "train_id": "AYN-A-007",
+    "eval_id": "AYN-A-008",
+    "val_macro_f1": 0.401673640167364
+  },
+  "text_bilstm": {
+    "seed": 0,
+    "train_id": "AYN-A-015",
+    "eval_id": "AYN-A-016",
+    "val_macro_f1": 0.7915232978608755
+  },
+  "text_textcnn": {
+    "seed": 1,
+    "train_id": "AYN-A-011",
+    "eval_id": "AYN-A-012",
+    "val_macro_f1": 0.7923430446109101
+  }
+}

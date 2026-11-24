@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\part_a\report.py", line 615, in main
+    fusion_examples(per_seed, selection)
+  File "C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\part_a\report.py", line 246, in fusion_examples
+    picked.append(r.assign(category=name))
+                  ^^^^^^^^
+  File "C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Series' object has no attribute 'assign'. Did you mean: 'align'?

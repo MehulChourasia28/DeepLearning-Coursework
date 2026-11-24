@@ -1,0 +1,31 @@
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+  64/12708 images
+  1344/12708 images
+  2624/12708 images
+  3904/12708 images
+  5184/12708 images
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\PIL\Image.py:1054: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+  6464/12708 images
+  7744/12708 images
+  9024/12708 images
+  10304/12708 images
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\PIL\Image.py:1054: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+  11584/12708 images
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+Saved (12708, 512) to C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\data\crisismmd\features\resnet18_imagenet1k_v1.npz

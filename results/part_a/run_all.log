@@ -1,0 +1,245 @@
+
+$ python -m part_a.idle_baseline --seconds 60
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\core\gpu.py:4: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+[AYN-A-006] idle baseline: 0.000806 kWh (CodeCarbon), 0.000200 kWh (utilisation estimate), CPU util 0.131
+
+$ python -m part_a.train --model majority --seeds 0 --run-type final --test
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-008] TEST majority seed0: macro-F1 0.4017 acc 0.6714
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+
+$ python -m part_a.train --model text_textcnn --seeds 0 1 2 --run-type final --test
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+  [AYN-A-009] text_textcnn seed0 epoch  1 loss 0.5840 val_loss 0.4879 val_F1 0.7471
+  [AYN-A-009] text_textcnn seed0 epoch  2 loss 0.4567 val_loss 0.4488 val_F1 0.7750
+  [AYN-A-009] text_textcnn seed0 epoch  3 loss 0.3669 val_loss 0.4344 val_F1 0.7897
+  [AYN-A-009] text_textcnn seed0 epoch  4 loss 0.3168 val_loss 0.4239 val_F1 0.7810
+  [AYN-A-009] text_textcnn seed0 epoch  5 loss 0.2484 val_loss 0.4622 val_F1 0.7759
+  [AYN-A-009] text_textcnn seed0 epoch  6 loss 0.2059 val_loss 0.4752 val_F1 0.7827
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-010] TEST text_textcnn seed0: macro-F1 0.8014 acc 0.8272
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-011] text_textcnn seed1 epoch  1 loss 0.5875 val_loss 0.4986 val_F1 0.7513
+  [AYN-A-011] text_textcnn seed1 epoch  2 loss 0.4768 val_loss 0.4375 val_F1 0.7637
+  [AYN-A-011] text_textcnn seed1 epoch  3 loss 0.3979 val_loss 0.4168 val_F1 0.7662
+  [AYN-A-011] text_textcnn seed1 epoch  4 loss 0.3300 val_loss 0.4454 val_F1 0.7425
+  [AYN-A-011] text_textcnn seed1 epoch  5 loss 0.2688 val_loss 0.4420 val_F1 0.7902
+  [AYN-A-011] text_textcnn seed1 epoch  6 loss 0.2130 val_loss 0.4612 val_F1 0.7652
+  [AYN-A-011] text_textcnn seed1 epoch  7 loss 0.1734 val_loss 0.4711 val_F1 0.7923
+  [AYN-A-011] text_textcnn seed1 epoch  8 loss 0.1396 val_loss 0.5279 val_F1 0.7805
+  [AYN-A-011] text_textcnn seed1 epoch  9 loss 0.1135 val_loss 0.5812 val_F1 0.7839
+  [AYN-A-011] text_textcnn seed1 epoch 10 loss 0.0962 val_loss 0.6564 val_F1 0.7790
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-012] TEST text_textcnn seed1: macro-F1 0.7934 acc 0.8181
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-013] text_textcnn seed2 epoch  1 loss 0.5792 val_loss 0.4750 val_F1 0.7257
+  [AYN-A-013] text_textcnn seed2 epoch  2 loss 0.4631 val_loss 0.4394 val_F1 0.7659
+  [AYN-A-013] text_textcnn seed2 epoch  3 loss 0.3766 val_loss 0.4310 val_F1 0.7820
+  [AYN-A-013] text_textcnn seed2 epoch  4 loss 0.3150 val_loss 0.4196 val_F1 0.7878
+  [AYN-A-013] text_textcnn seed2 epoch  5 loss 0.2564 val_loss 0.4240 val_F1 0.7839
+  [AYN-A-013] text_textcnn seed2 epoch  6 loss 0.2066 val_loss 0.4424 val_F1 0.7853
+  [AYN-A-013] text_textcnn seed2 epoch  7 loss 0.1712 val_loss 0.5057 val_F1 0.7929
+  [AYN-A-013] text_textcnn seed2 epoch  8 loss 0.1329 val_loss 0.5534 val_F1 0.7853
+  [AYN-A-013] text_textcnn seed2 epoch  9 loss 0.1040 val_loss 0.6216 val_F1 0.7769
+  [AYN-A-013] text_textcnn seed2 epoch 10 loss 0.0986 val_loss 0.5924 val_F1 0.7867
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-014] TEST text_textcnn seed2: macro-F1 0.8008 acc 0.8253
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+
+$ python -m part_a.train --model text_bilstm --seeds 0 1 2 --run-type final --test
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+  [AYN-A-015] text_bilstm seed0 epoch  1 loss 0.5304 val_loss 0.4412 val_F1 0.7706
+  [AYN-A-015] text_bilstm seed0 epoch  2 loss 0.3899 val_loss 0.4201 val_F1 0.7802
+  [AYN-A-015] text_bilstm seed0 epoch  3 loss 0.2962 val_loss 0.4360 val_F1 0.7803
+  [AYN-A-015] text_bilstm seed0 epoch  4 loss 0.2123 val_loss 0.5000 val_F1 0.7915
+  [AYN-A-015] text_bilstm seed0 epoch  5 loss 0.1449 val_loss 0.6047 val_F1 0.7740
+  [AYN-A-015] text_bilstm seed0 epoch  6 loss 0.0994 val_loss 0.6947 val_F1 0.7538
+  [AYN-A-015] text_bilstm seed0 epoch  7 loss 0.0638 val_loss 0.9146 val_F1 0.7774
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-016] TEST text_bilstm seed0: macro-F1 0.7883 acc 0.8142
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-017] text_bilstm seed1 epoch  1 loss 0.5456 val_loss 0.4597 val_F1 0.7739
+  [AYN-A-017] text_bilstm seed1 epoch  2 loss 0.3919 val_loss 0.4185 val_F1 0.7790
+  [AYN-A-017] text_bilstm seed1 epoch  3 loss 0.3022 val_loss 0.4397 val_F1 0.7802
+  [AYN-A-017] text_bilstm seed1 epoch  4 loss 0.2217 val_loss 0.4646 val_F1 0.7778
+  [AYN-A-017] text_bilstm seed1 epoch  5 loss 0.1614 val_loss 0.5507 val_F1 0.7840
+  [AYN-A-017] text_bilstm seed1 epoch  6 loss 0.1010 val_loss 0.6334 val_F1 0.7747
+  [AYN-A-017] text_bilstm seed1 epoch  7 loss 0.0705 val_loss 0.7773 val_F1 0.7714
+  [AYN-A-017] text_bilstm seed1 epoch  8 loss 0.0456 val_loss 0.9298 val_F1 0.7730
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-018] TEST text_bilstm seed1: macro-F1 0.7857 acc 0.8149
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-019] text_bilstm seed2 epoch  1 loss 0.5290 val_loss 0.4505 val_F1 0.7736
+  [AYN-A-019] text_bilstm seed2 epoch  2 loss 0.3864 val_loss 0.4178 val_F1 0.7900
+  [AYN-A-019] text_bilstm seed2 epoch  3 loss 0.2913 val_loss 0.4602 val_F1 0.7937
+  [AYN-A-019] text_bilstm seed2 epoch  4 loss 0.2200 val_loss 0.4942 val_F1 0.7915
+  [AYN-A-019] text_bilstm seed2 epoch  5 loss 0.1541 val_loss 0.5839 val_F1 0.7893
+  [AYN-A-019] text_bilstm seed2 epoch  6 loss 0.0975 val_loss 0.6802 val_F1 0.7856
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-020] TEST text_bilstm seed2: macro-F1 0.7940 acc 0.8142
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+
+$ python -m part_a.train --model image_mlp --seeds 0 1 2 --run-type final --test
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+  [AYN-A-021] image_mlp seed0 epoch  1 loss 0.5116 val_loss 0.4374 val_F1 0.7761
+  [AYN-A-021] image_mlp seed0 epoch  2 loss 0.4663 val_loss 0.4163 val_F1 0.7757
+  [AYN-A-021] image_mlp seed0 epoch  3 loss 0.4499 val_loss 0.4153 val_F1 0.7747
+  [AYN-A-021] image_mlp seed0 epoch  4 loss 0.4485 val_loss 0.4152 val_F1 0.7613
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-022] TEST image_mlp seed0: macro-F1 0.7896 acc 0.8175
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-023] image_mlp seed1 epoch  1 loss 0.4929 val_loss 0.4342 val_F1 0.7684
+  [AYN-A-023] image_mlp seed1 epoch  2 loss 0.4608 val_loss 0.4223 val_F1 0.7637
+  [AYN-A-023] image_mlp seed1 epoch  3 loss 0.4461 val_loss 0.4356 val_F1 0.7311
+  [AYN-A-023] image_mlp seed1 epoch  4 loss 0.4395 val_loss 0.4383 val_F1 0.7120
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-024] TEST image_mlp seed1: macro-F1 0.7651 acc 0.8090
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-025] image_mlp seed2 epoch  1 loss 0.5052 val_loss 0.4404 val_F1 0.7461
+  [AYN-A-025] image_mlp seed2 epoch  2 loss 0.4578 val_loss 0.4193 val_F1 0.7718
+  [AYN-A-025] image_mlp seed2 epoch  3 loss 0.4454 val_loss 0.4112 val_F1 0.7765
+  [AYN-A-025] image_mlp seed2 epoch  4 loss 0.4387 val_loss 0.4112 val_F1 0.7894
+  [AYN-A-025] image_mlp seed2 epoch  5 loss 0.4363 val_loss 0.4094 val_F1 0.7771
+  [AYN-A-025] image_mlp seed2 epoch  6 loss 0.4298 val_loss 0.4063 val_F1 0.7899
+  [AYN-A-025] image_mlp seed2 epoch  7 loss 0.4259 val_loss 0.3943 val_F1 0.7896
+  [AYN-A-025] image_mlp seed2 epoch  8 loss 0.4201 val_loss 0.3980 val_F1 0.7853
+  [AYN-A-025] image_mlp seed2 epoch  9 loss 0.4270 val_loss 0.4060 val_F1 0.7435
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-026] TEST image_mlp seed2: macro-F1 0.7945 acc 0.8266
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+
+$ python -m part_a.train --model fusion_textcnn --seeds 0 1 2 --run-type final --test
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+  [AYN-A-027] fusion_textcnn seed0 epoch  1 loss 0.4701 val_loss 0.3697 val_F1 0.8181
+  [AYN-A-027] fusion_textcnn seed0 epoch  2 loss 0.3536 val_loss 0.3213 val_F1 0.8373
+  [AYN-A-027] fusion_textcnn seed0 epoch  3 loss 0.2889 val_loss 0.3346 val_F1 0.8180
+  [AYN-A-027] fusion_textcnn seed0 epoch  4 loss 0.2506 val_loss 0.3112 val_F1 0.8501
+  [AYN-A-027] fusion_textcnn seed0 epoch  5 loss 0.1913 val_loss 0.3160 val_F1 0.8480
+  [AYN-A-027] fusion_textcnn seed0 epoch  6 loss 0.1562 val_loss 0.3266 val_F1 0.8501
+  [AYN-A-027] fusion_textcnn seed0 epoch  7 loss 0.1287 val_loss 0.4159 val_F1 0.8363
+  [AYN-A-027] fusion_textcnn seed0 epoch  8 loss 0.1112 val_loss 0.3842 val_F1 0.8323
+  [AYN-A-027] fusion_textcnn seed0 epoch  9 loss 0.0935 val_loss 0.4490 val_F1 0.8420
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-028] TEST fusion_textcnn seed0: macro-F1 0.8533 acc 0.8716
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-029] fusion_textcnn seed1 epoch  1 loss 0.4624 val_loss 0.3435 val_F1 0.8152
+  [AYN-A-029] fusion_textcnn seed1 epoch  2 loss 0.3532 val_loss 0.3295 val_F1 0.8422
+  [AYN-A-029] fusion_textcnn seed1 epoch  3 loss 0.2954 val_loss 0.3685 val_F1 0.7951
+  [AYN-A-029] fusion_textcnn seed1 epoch  4 loss 0.2386 val_loss 0.3487 val_F1 0.8286
+  [AYN-A-029] fusion_textcnn seed1 epoch  5 loss 0.2033 val_loss 0.3662 val_F1 0.8302
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-030] TEST fusion_textcnn seed1: macro-F1 0.8641 acc 0.8801
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-031] fusion_textcnn seed2 epoch  1 loss 0.4840 val_loss 0.3442 val_F1 0.8286
+  [AYN-A-031] fusion_textcnn seed2 epoch  2 loss 0.3598 val_loss 0.3150 val_F1 0.8357
+  [AYN-A-031] fusion_textcnn seed2 epoch  3 loss 0.2986 val_loss 0.3155 val_F1 0.8450
+  [AYN-A-031] fusion_textcnn seed2 epoch  4 loss 0.2489 val_loss 0.3087 val_F1 0.8454
+  [AYN-A-031] fusion_textcnn seed2 epoch  5 loss 0.1919 val_loss 0.3190 val_F1 0.8539
+  [AYN-A-031] fusion_textcnn seed2 epoch  6 loss 0.1681 val_loss 0.3561 val_F1 0.8354
+  [AYN-A-031] fusion_textcnn seed2 epoch  7 loss 0.1273 val_loss 0.3900 val_F1 0.8387
+  [AYN-A-031] fusion_textcnn seed2 epoch  8 loss 0.1089 val_loss 0.3932 val_F1 0.8321
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-032] TEST fusion_textcnn seed2: macro-F1 0.8637 acc 0.8781
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+
+$ python -m part_a.train --model fusion_bilstm --seeds 0 1 2 --run-type final --test
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+  [AYN-A-033] fusion_bilstm seed0 epoch  1 loss 0.4541 val_loss 0.3637 val_F1 0.8299
+  [AYN-A-033] fusion_bilstm seed0 epoch  2 loss 0.3352 val_loss 0.3177 val_F1 0.8483
+  [AYN-A-033] fusion_bilstm seed0 epoch  3 loss 0.2591 val_loss 0.3351 val_F1 0.8264
+  [AYN-A-033] fusion_bilstm seed0 epoch  4 loss 0.2112 val_loss 0.3423 val_F1 0.8419
+  [AYN-A-033] fusion_bilstm seed0 epoch  5 loss 0.1509 val_loss 0.4114 val_F1 0.8234
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-034] TEST fusion_bilstm seed0: macro-F1 0.8615 acc 0.8781
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-035] fusion_bilstm seed1 epoch  1 loss 0.4402 val_loss 0.3246 val_F1 0.8297
+  [AYN-A-035] fusion_bilstm seed1 epoch  2 loss 0.3259 val_loss 0.3151 val_F1 0.8483
+  [AYN-A-035] fusion_bilstm seed1 epoch  3 loss 0.2669 val_loss 0.3391 val_F1 0.8216
+  [AYN-A-035] fusion_bilstm seed1 epoch  4 loss 0.2045 val_loss 0.3921 val_F1 0.8172
+  [AYN-A-035] fusion_bilstm seed1 epoch  5 loss 0.1569 val_loss 0.4247 val_F1 0.8255
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-036] TEST fusion_bilstm seed1: macro-F1 0.8680 acc 0.8840
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-037] fusion_bilstm seed2 epoch  1 loss 0.4525 val_loss 0.3897 val_F1 0.8098
+  [AYN-A-037] fusion_bilstm seed2 epoch  2 loss 0.3152 val_loss 0.3086 val_F1 0.8411
+  [AYN-A-037] fusion_bilstm seed2 epoch  3 loss 0.2555 val_loss 0.3137 val_F1 0.8493
+  [AYN-A-037] fusion_bilstm seed2 epoch  4 loss 0.2004 val_loss 0.3422 val_F1 0.8299
+  [AYN-A-037] fusion_bilstm seed2 epoch  5 loss 0.1436 val_loss 0.4367 val_F1 0.8370
+  [AYN-A-037] fusion_bilstm seed2 epoch  6 loss 0.1009 val_loss 0.5172 val_F1 0.8205
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+  [AYN-A-038] TEST fusion_bilstm seed2: macro-F1 0.8557 acc 0.8742
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+
+$ python -m part_a.report
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\core\gpu.py:4: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml
+C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\codecarbon\output_methods\file.py:52: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([df, pd.DataFrame.from_records([dict(total.values)])])
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\part_a\report.py", line 649, in <module>
+    main()
+  File "C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\part_a\report.py", line 615, in main
+    fusion_examples(per_seed, selection)
+  File "C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\part_a\report.py", line 246, in fusion_examples
+    picked.append(r.assign(category=name))
+                  ^^^^^^^^
+  File "C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\.venv\Lib\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Series' object has no attribute 'assign'. Did you mean: 'align'?
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\part_a\run_all.py", line 49, in <module>
+    main()
+  File "C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\part_a\run_all.py", line 45, in main
+    sh("part_a.report")
+  File "C:\Users\iaaya\OneDrive - University College London\Aayans Folder\Year 3\Deep_Learning\DeepLearning-Coursework\part_a\run_all.py", line 25, in sh
+    subprocess.run(cmd, check=True, cwd=C.ROOT)
+  File "C:\Users\iaaya\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\iaaya\\OneDrive - University College London\\Aayans Folder\\Year 3\\Deep_Learning\\DeepLearning-Coursework\\.venv\\Scripts\\python.exe', '-m', 'part_a.report']' returned non-zero exit status 1.
