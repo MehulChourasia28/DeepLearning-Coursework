@@ -6,5 +6,6 @@ __pycache__/
 data/
 
 # Part A: keep only the selected checkpoint (Fusion TextCNN, median-validation seed 0)
+# done to help reduce overall size of repository 
 results/part_a/runs/*/best.pt
 !results/part_a/runs/AYN-A-027/best.pt
